@@ -1,0 +1,33 @@
+{
+  "title": "Prossimi Eventi",
+  "button": {
+    "text": "Scopri di più"
+  },
+  "events": [],
+  "disabled_events":[
+    {
+      "id": 1,
+      "slug": "torneo-apertura-2026", 
+      "type": "torneo",  
+      "title": "Torneo di Apertura Stagione 2026",
+      "date": "25 Aprile 2026",
+      "category": "2x2 Maschile e 2x2 Femminile",
+      "location": "Bagno Roma",
+      "signupLink": "https://forms.google.com/...",
+      "description": "Primo torneo della stagione 2025!",
+      "imageUrl": "/eventImages/bagnolomi2025.jpg"
+    },
+    {
+      "id": 2,
+      "slug": "camp",
+      "type": "camp", 
+      "title": "Beach Volley Camp 2026",
+      "date": "1-7 Settembre 2026",
+      "category": "Open - Tutti i livelli",
+      "location": "Bagno Roma",
+      "signupLink": "https://forms.google.com/...", 
+      "description": "Una settimana intensa di beach volley",
+      "imageUrl": "/eventImages/gughina2025.jpg"
+    }
+  ]
+}

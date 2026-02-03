@@ -1,0 +1,50 @@
+{
+  "title": "Le Nostre Strutture",
+  "subtitle": "Dove ci alleniamo e giochiamo",
+  "description": "Collaboriamo con i migliori stabilimenti balneari di Tirrenia per offrirvi campi sempre perfetti e servizi al top.",
+  "locations": [
+    {
+      "id": 1,
+      "name": "Orange Beach",
+      "address": "Viale del Tirreno, 10, 56100 Tirrenia PI",
+      "mapLink": "https://www.google.it/maps/place/Orange+Beach/@43.6337293,10.2828553,600m/data=!3m2!1e3!4b1!4m6!3m5!1s0x12d595a9dfd761e5:0x790333fc2766051e!8m2!3d43.6337255!4d10.2877262!16s%2Fg%2F11rfcz4rkz?hl=it&entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "description": "La nostra sede principale, dove abbiamo trascorso le ultime 2 stagioni estive. Spiaggia metà libera e metà attrezzata con servizio bar e ristorante e un ampio spazio dedicato al beach volley.",
+      "imageUrl": "/locationImages/orangebeach.jpg",
+      "features": [
+        "3-5 Campi ",
+        "Docce Calde",
+        "Ristorante e Bar",
+        "Ingresso libero"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Bagno Lomi",
+      "address": "Viale del Tirreno, 36, 56100 Tirrenia PI",
+      "mapLink": "https://www.google.it/maps/place/Bagno+Lomi/@43.6237297,10.2860613,600m/data=!3m2!1e3!4b1!4m6!3m5!1s0x12d5eacfaf8e2bcb:0x201060588009adf9!8m2!3d43.6237258!4d10.2886362!16s%2Fg%2F1tf849f1?hl=it&entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "description": "Stabilimento balneare storico per la BVTA, è proprio da qui che sono iniziati i primi tornei nel lontano 2014 e lo è tutt'ora. Ristorante e bar con terrazza suggestiva che da spazio ad una grande vista sui campi e sul tramonto di Tirrenia.",
+      "imageUrl": "/locationImages/bagnolomi.jpg",
+      "features": [
+        "1-2 Campi",
+        "Parcheggio interno",
+        "Area Picnic/Relax",
+        "Docce Calde",
+        "Ristorante e Bar con Terrazza"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Bagno Roma",
+      "address": "Viale del Tirreno, 28, 56100 Tirrenia PI",
+      "mapLink":"https://www.google.it/maps/place/Bagno+Roma,+56128+Tirrenia+PI/@43.6266276,10.2876335,600m/data=!3m2!1e3!4b1!4m6!3m5!1s0x12d5eace9cf83ea9:0x724ba7496310631b!8m2!3d43.6266237!4d10.2902084!16s%2Fg%2F11t_pytps8?hl=it&entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "description": "Stabilimento balneare di nuova gestione e new entry per la BVTA. Ci aspettano grandi cose, c'è un ampia zona dedicata ai campi e una bellissima terrazza con vista mare a disposizione.",
+      "imageUrl": "/locationImages/bagnoroma.jpg",
+      "features": [
+        "3-5 Campi",
+        "Parcheggio interno",
+        "Docce Calde",
+        "Ristorante e Bar con Terrazza"
+      ]
+    }
+  ]
+}

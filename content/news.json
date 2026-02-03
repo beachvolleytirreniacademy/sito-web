@@ -1,0 +1,58 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Apertura Iscrizioni Corsi Estivi",
+      "date": "2024-05-15",
+      "image": "/images/news/summer-camp.jpg",
+      "excerpt": "Sono aperte le iscrizioni per i corsi estivi 2024. Scopri le nuove formule per principianti e avanzati sulla spiaggia di Tirrenia.",
+      "body": "<p>Sono ufficialmente aperte le iscrizioni per la stagione estiva 2024! Quest'anno abbiamo introdotto numerose novità per venire incontro alle esigenze di tutti gli atleti.</p><h3>Cosa offriamo:</h3><ul><li>Corsi base per principianti</li><li>Masterclass per atleti avanzati</li><li>Tornei settimanali</li></ul><p>Vi aspettiamo in spiaggia!</p>"
+    },
+    {
+      "id": 2,
+      "title": "Grande successo al Torneo di Pasqua",
+      "date": "2026-01-02",
+      "excerpt": "Oltre 50 coppie si sono sfidate nel weekend pasquale. Ecco i vincitori e le foto più belle dell'evento."
+    },
+    {
+      "id": 3,
+      "title": "Nuova Partnership con Decathlon",
+      "date": "2024-02-10",
+      "excerpt": "Siamo felici di annunciare la collaborazione tecnica con Decathlon per la fornitura di palloni e reti per la nuova stagione."
+    },
+    {
+      "id": 4,
+      "title": "Risultati Tappa Invernale AIBVC",
+      "date": "2024-06-01",
+      "image": "/images/news/aibvc-win.jpg",
+      "excerpt": "I nostri atleti conquistano il podio a Cesenatico! Leggi il resoconto completo della trasferta romagnola."
+    },
+    {
+      "id": 5,
+      "title": "Torneo Misto sotto le stelle",
+      "date": "2024-06-15",
+      "excerpt": "Una notte di sport e divertimento. Iscriviti subito al torneo in notturna del 15 Giugno."
+    },
+    {
+      "id": 6,
+      "title": "Clinic con Campioni Nazionali",
+      "date": "2024-06-20",
+      "image": "/images/news/clinic.jpg",
+      "excerpt": "Un'occasione unica per imparare dai migliori. Posti limitati per il clinic tecnico."
+    },
+    {
+      "id": 7,
+      "title": "Festa di Inizio Estate",
+      "date": "2024-06-25",
+      "image": "/images/news/party.jpg",
+      "excerpt": "Musica, grigliata e beach volley. Non mancare alla nostra festa di inaugurazione!"
+    },
+    {
+      "id": 8,
+      "title": "Nuove Divise Ufficiali",
+      "date": "2024-07-01",
+      "image": "/images/news/uniforms.jpg",
+      "excerpt": "Presentate le nuove canotte da gara per la stagione 2024/2025. Disponibili nello shop."
+    }
+  ]
+}

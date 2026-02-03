@@ -1,0 +1,35 @@
+{
+  "title": "Eventi Passati",
+  "button": {
+    "text": "Rivivi l'evento"
+  },
+  "events": [
+    {
+      "id": 1,
+      "slug": "torneo-bagno-lomi-2025",
+      "type": "torneo",
+      "title": "Torneo Bagno Lomi 2025",
+      "date": "12-13 Luglio 2025",
+      "location": "Bagno Lomi",
+      "category": "2x2 Maschile e Femminile",
+      "description": "Lo storico torneo arrivato alla decima edizione",
+      "imageUrl": "/eventImages/bagnolomi2025.jpg",
+      
+      "externalGalleryLink": "https://drive.google.com/drive/folders/1OZkDbZkztoZejpzd2cLG4ZqYONS8ExuK?usp=drive_link.",
+      "galleryImages": []
+    },
+    {
+      "id": 2,
+      "slug": "gughina-summer-cup-2025",
+      "type": "torneo",
+      "title": "Gughina Summer Cup 2025",
+      "date": "26-27 Luglio 2025", 
+      "location": "Orange Beach Tirrenia",
+      "category": "2x2 Maschile, Femminile e Misto",
+      "description": "Il più grande torneo del litorale pisano.",
+      "imageUrl": "/eventImages/gughina2025.jpg",
+      "externalGalleryLink": "https://drive.google.com/drive/folders/1iENHQvW1T2nbbe_5DtDJX7E_v-UF6hJo?usp=drive_link",
+      "galleryImages": []
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Canotta BVTA 2026",
+    "description": "Canotta stagione 2026.",
+    "price": "€20,00",
+    "image": "/shopImages/shop/canotta-sample.jpg",
+    "type": "order"
+  },
+  {
+    "id": 2,
+    "name": "Felpa BVTA 2026",
+    "description": "Felpa con cappuccio, disponibile su richiesta.",
+    "price": "€40,00",
+    "image": "/images/shop/felpa-sample.jpg",
+    "type": "order"
+  },
+  {
+    "id": 3,
+    "name": "Pantaloncini BVTA 2026",
+    "description": "Pantaloncini stagione 2026",
+    "price": "€20,00",
+    "image": "/images/shop/felpa-sample.jpg",
+    "type": "order"
+  },
+  {
+    "id": 4,
+    "name": "Top Donna Gughina Summer Cup 2025",
+    "description": "Ultimi pezzi rimasti",
+    "price": "€10,00",
+    "image": "/images/shop/shorts-vinted.jpg",
+    "type": "vinted"
+  }
+]

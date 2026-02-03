@@ -1,0 +1,30 @@
+{
+  "title": "I Nostri Numeri",
+  "subtitle": "L'impatto del nostro lavoro in numeri",
+  "stats": [
+    {
+      "id": 1,
+      "value": "150",
+      "suffix": "+",
+      "label": "Affiliazioni nel 2025"
+    },
+    {
+      "id": 2,
+      "value": "25",
+      "suffix": "",
+      "label": "Tornei Organizzati"
+    },
+    {
+      "id": 3,
+      "value": "1.2",
+      "suffix": "K",
+      "label": "Partecipanti Totali"
+    },
+    {
+      "id": 4,
+      "value": "10",
+      "suffix": "",
+      "label": "Anni di Esperienza"
+    }
+  ]
+} 

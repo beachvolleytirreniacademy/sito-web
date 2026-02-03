@@ -1,0 +1,17 @@
+{
+  "title": "BVTA",
+  "subtitle": "Sport, competizione, divertimento. L'eccellenza del Beach Volley a Tirrenia.",
+  "buttons": [
+    {
+      "text": "Scopri chi siamo",
+      "link": "#about",
+      "variant": "primary"
+    },
+    {
+      "text": "Contattaci",
+      "link": "#contact",
+      "variant": "ghost"
+    }
+  ],
+  "backgroundImage": "/images/hero.jpg"
+} 

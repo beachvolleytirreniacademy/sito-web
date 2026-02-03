@@ -1,0 +1,19 @@
+{
+    "socialLinks": [
+        { 
+            "label": "Instagram", 
+            "path": "https://www.instagram.com/_beachvolleytirreniaacademy/",
+            "icon": "i-simple-icons-instagram"
+        },
+        {
+            "label": "Whatsapp", 
+            "path": "https://wa.me/+393313494020",
+            "icon": "i-simple-icons-whatsapp"
+        },
+        { 
+            "label": "Email", 
+            "path": "beachvolleytirreniacademy@gmail.com",
+            "icon": "i-simple-icons-gmail"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+  "title": "La Nostra Gallery",
+  "images": [
+    {
+      "id": 1,
+      "url": "https://vhqpzjlhvsrsrdbxcpwn.supabase.co/storage/v1/object/public/images/gallery/gallery_1.jpg",
+      "alt": "Beach Volley Training",
+      "caption": "Allenamento in spiaggia"
+    },
+    {
+      "id": 2,
+      "url": "https://vhqpzjlhvsrsrdbxcpwn.supabase.co/storage/v1/object/public/images/gallery/gallery_2.jpg",
+      "alt": "Tournament Action",
+      "caption": "Torneo estivo"
+    },
+    {
+      "id": 3,
+      "url": "https://vhqpzjlhvsrsrdbxcpwn.supabase.co/storage/v1/object/public/images/gallery/gallery_3.jpg",
+      "alt": "Team Building",
+      "caption": "Attività di gruppo"
+    },
+    {
+      "id": 4,
+      "url": "https://vhqpzjlhvsrsrdbxcpwn.supabase.co/storage/v1/object/public/images/gallery/gallery_4.jpg",
+      "alt": "Beach Training",
+      "caption": "Allenamento tecnico"
+    },
+    {
+      "id": 5,
+      "url": "https://vhqpzjlhvsrsrdbxcpwn.supabase.co/storage/v1/object/public/images/gallery/gallery_5.jpg",
+      "alt": "Competition",
+      "caption": "Competizione locale"
+    },
+    {
+      "id": 6,
+      "url": "https://placehold.co/600x600?text=Beach+Volley+6",
+      "alt": "Beach Event",
+      "caption": "Evento sulla spiaggia"
+    }
+  ]
+} 

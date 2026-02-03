@@ -1,0 +1,59 @@
+{
+  "title": "Stagione Invernale 2025-2026",
+  "subtitle": "I nostri team che competono nelle competizioni AIBVC",
+  "teams": [
+    {
+      "id": 1,
+      "name": "BVTA SALES SERIE B",
+      "category": "Serie B Maschile",
+      "coach": "Claudia Puccinelli",
+      "photoUrl": "/teamImages/team_1.jpeg",
+      "players": ["Valerio Imbriolo", "Luca Morelli","Davide Seminara","Iacopo Ghilardi","Carlo Macchia","Gianluca Antonelli"],
+      "results": [
+        { "day": "1ª Tappa", "placement": "2° Posto" }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "BVTA ARTEMIS ECCELLENZA",
+      "category": "Eccellenza Maschile",
+      "photoUrl": "/teamImages/team_2.jpeg",
+      "players": ["Cosimo Balducci", "Matteo Codiglione", "Gabriele Cecchi","Benedetto Marrazzo","Renato Kouakou","Lorenzo Mangoni"],
+      "results": [
+        { "day": "1ª Tappa", "placement": "4° Posto" }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "BVTA X TURTLE BEACH",
+      "category": "Eccellenza Maschile",
+      "photoUrl": "/teamImages/team_3.jpeg",
+      "players": ["Paolo Salini", "Daniele Giannattasio","Matteo Spinetti","Giuseppe Castiglione","Simone Bonetti","Gianmarco Carlà"],
+      "results": [
+        { "day": "1ª Tappa", "placement": "4° Posto" }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "BVTA PROMOZIONE",
+      "category": "Promozione Femminile",
+      "photoUrl": "/teamImages/team_4.jpeg",
+      "players": ["Michelle De Rosa", "Benedetta Alestra","Matilde Fulceri","Irene Puleo","Irene Trusendi"],
+      "coach":"Claudia Puccinelli",
+      "results": [
+        { "day": "1ª Tappa", "placement": "2° Posto" },
+        { "day": "2ª Tappa", "placement": "1° Posto" }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "BVTA ROSSA",
+      "category": "Eccellenza Maschile",
+      "photoUrl": "/teamImages/team_5.jpeg",
+      "players": ["Luca Brunelli", "Marco Picanza","Giacomo Caramelli","Luca Martellotta","Adriano Guiggi","Andrea Benedetti"],
+      "results": [
+        { "day": "1ª Tappa", "placement": "5° Posto" }
+      ]
+    }
+  ]
+}

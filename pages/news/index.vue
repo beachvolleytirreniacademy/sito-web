@@ -75,7 +75,7 @@
           Nessuna notizia trovata.
         </div>
 
-        <div v-if="totalPages > 1" class="mt-12 flex justify-center items-center gap-4">
+        <div v-if="totalPages > 1" class="mt-16 flex justify-center items-center gap-4">
           
           <UButton 
             :disabled="currentPage === 1 || loading" 
@@ -178,6 +178,13 @@ const formatDate = (dateString) => {
 // Helper per pulire l'HTML dal body se non c'è excerpt (rimuove tag <p>, <b> etc)
 const stripHtml = (html) => {
   if (!html) return '';
+  // Nota per Nuxt: document esiste solo lato client.
+  // In SSR potrebbe dare errore se non controllato, ma essendo chiamato nel template
+  // solitamente Vue gestisce il rendering client-side per queste interazioni o l'hydration.
+  // Per sicurezza assoluta in SSR si userebbe una regex, ma se funziona così va bene.
+  if (typeof document === 'undefined') {
+      return html.replace(/<[^>]*>?/gm, ''); // Fallback regex per SSR
+  }
   const tmp = document.createElement("DIV");
   tmp.innerHTML = html;
   return tmp.textContent || tmp.innerText || "";

@@ -1,0 +1,1 @@
+INSERT INTO "public"."products" ("id", "created_at", "name", "description", "image", "type", "price") VALUES ('1', '2026-02-03 10:43:53.024666+00', 'Felpa BVTA', 'felpa ufficiale', null, 'order', '35'), ('2', '2026-02-03 12:43:06.466578+00', 'Pantaloni Lunghi', 'Pantaloni lunghi della tuta completa BVTA', null, 'order', '25');

@@ -24,7 +24,7 @@
           v-for="article in news" 
           :key="article.id"
           :to="`/news/${article.id}`"
-          class="group flex flex-col bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+          class="group flex flex-col bg-white rounded-xl border border-gray-300 shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
         >
           <div v-if="article.image" class="h-48 overflow-hidden bg-gray-100 relative shrink-0">
             <img 

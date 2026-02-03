@@ -1,5 +1,5 @@
 <template>
-  <section id="upcoming-events" class="py-16">
+  <section id="upcoming-events" class="py-16 bg-gray-50">
     <UContainer>
       <h2 ref="titleRef" class="text-3xl font-bold text-center text-primary mb-12">
         {{ content.title }}

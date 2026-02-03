@@ -1,8 +1,11 @@
 <template>
   <Main>
     <div class="pt-32 pb-20 bg-gray-50 min-h-screen">
+
+      
       
       <UContainer class="max-w-3xl mx-auto">
+        
         
         <div class="mb-8">
           <UButton 

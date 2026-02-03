@@ -1,0 +1,1 @@
+INSERT INTO "public"."news" ("id", "created_at", "title", "date", "image", "body") VALUES ('1', '2026-02-03 10:28:43.728901+00', 'Nuovo sito Online!', '2026-02-03', null, 'Siamo felici di annunciare la pubblicazione del nostro nuovo sito!');

@@ -94,7 +94,7 @@
       <div class="mt-0">
         <NuxtLink 
           to="https://linktr.ee/bvta?utm_source=linktree_profile_share&ltsid=16a184cf-0778-4eb2-aacc-5cfbb93008dd" 
-          class="block bg-gray-100 hover:bg-gray-200 transition-colors p-8 text-center"
+          class="block bg-white hover:bg-gray-100 transition-colors p-8 text-center"
           target="_blank"
         >
           <span class="block text-xl font-semibold text-gray-800 mb-2">

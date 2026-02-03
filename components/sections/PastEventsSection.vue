@@ -52,7 +52,6 @@
     </UContainer>
   </section>
 </template>
-
 <script setup>
 import { onMounted, ref, nextTick } from 'vue'
 import gsap from 'gsap'
@@ -71,7 +70,7 @@ const content = ref({
   events: []
 })
 
-// STESSA FUNZIONE DI FORMATTAZIONE (Potresti spostarla in un file utils.js in futuro)
+// Funzione di formattazione date
 const formatEventDates = (startStr, endStr) => {
   if (!startStr) return '';
   const start = new Date(startStr);
@@ -117,12 +116,21 @@ const getPastEvents = async () => {
   }
 }
 
+// ANIMAZIONE VELOCIZZATA E OTTIMIZZATA PER MOBILE
 const animateCards = () => {
   if (cardsRef.value && cardsRef.value.children.length > 0) {
     gsap.set(cardsRef.value.children, { clearProps: "all" })
     gsap.from(cardsRef.value.children, {
-      opacity: 0, y: 50, duration: 0.8, stagger: 0.2, ease: 'power3.out',
-      scrollTrigger: { trigger: cardsRef.value, start: 'top bottom-=50', toggleActions: 'play none none reverse' }
+      opacity: 0, 
+      y: 30, // Ridotto da 50 a 30
+      duration: 0.5, // Ridotto da 0.8 a 0.5 (più veloce)
+      stagger: 0.1, // Stacco più breve tra card
+      ease: 'power2.out',
+      scrollTrigger: { 
+        trigger: cardsRef.value, 
+        start: 'top 90%', // Parte quasi subito appena entra nello schermo
+        toggleActions: 'play none none reverse' 
+      }
     })
   }
 }
@@ -130,8 +138,15 @@ const animateCards = () => {
 onMounted(() => {
   if (titleRef.value) {
     gsap.from(titleRef.value, {
-      opacity: 0, y: 50, duration: 1, ease: 'power3.out',
-      scrollTrigger: { trigger: titleRef.value, start: 'top bottom-=100', toggleActions: 'play none none reverse' }
+      opacity: 0, 
+      y: 30, // Ridotto da 50 a 30
+      duration: 0.6, // Ridotto da 1 a 0.6
+      ease: 'power2.out',
+      scrollTrigger: { 
+        trigger: titleRef.value, 
+        start: 'top 90%', // Trigger anticipato per mobile
+        toggleActions: 'play none none reverse' 
+      }
     })
   }
   getPastEvents()

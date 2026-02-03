@@ -62,7 +62,6 @@
     </UContainer>
   </section>
 </template>
-
 <script setup>
 import { onMounted, ref, nextTick } from "vue";
 import gsap from "gsap";
@@ -81,34 +80,23 @@ const content = ref({
   events: []
 });
 
-// LOGICA FORMATTAZIONE DATE RICHIESTA
+// LOGICA FORMATTAZIONE DATE
 const formatEventDates = (startStr, endStr) => {
   if (!startStr) return '';
-  
-  // Se manca la data fine, la consideriamo uguale alla data inizio
   const start = new Date(startStr);
   const end = endStr ? new Date(endStr) : new Date(startStr);
-
   const optionsMonth = { month: 'long' };
-  
-  // Helper per capitalizzare il mese (luglio -> Luglio)
   const cap = (str) => str.charAt(0).toUpperCase() + str.slice(1);
   const getMonth = (d) => cap(d.toLocaleDateString('it-IT', optionsMonth));
   const getDay = (d) => d.getDate();
   const getYear = (d) => d.getFullYear();
 
-  // Caso 1: Stesso giorno (Inizia e finisce lo stesso giorno)
   if (start.getTime() === end.getTime()) {
     return `${getDay(start)} ${getMonth(start)} ${getYear(start)}`;
   }
-
-  // Caso 2: Stesso mese e stesso anno (es. 1-7 Luglio 2026)
   if (start.getMonth() === end.getMonth() && start.getFullYear() === end.getFullYear()) {
     return `${getDay(start)}-${getDay(end)} ${getMonth(start)} ${getYear(start)}`;
   }
-
-  // Caso 3: Mesi diversi (es. 30 Giugno - 2 Luglio 2026)
-  // Nota: gestisce anche anni diversi se necessario
   return `${getDay(start)} ${getMonth(start)} - ${getDay(end)} ${getMonth(end)} ${getYear(end)}`;
 };
 
@@ -117,12 +105,11 @@ const getEvents = async () => {
     loading.value = true;
     const today = new Date().toISOString().split('T')[0];
 
-    // Prendiamo eventi che FINISCONO oggi o nel futuro
     let { data, error } = await supabase
       .from('events')
       .select('*')
       .gte('end_date', today) 
-      .order('start_date', { ascending: true }); // I più vicini prima
+      .order('start_date', { ascending: true });
 
     if (error) throw error;
 
@@ -142,8 +129,16 @@ const animateCards = () => {
   if (cardsRef.value && cardsRef.value.children.length > 0) {
     gsap.set(cardsRef.value.children, { clearProps: "all" });
     gsap.from(cardsRef.value.children, {
-      opacity: 0, y: 50, duration: 0.8, stagger: 0.2, ease: "power3.out",
-      scrollTrigger: { trigger: cardsRef.value, start: "top bottom-=50", toggleActions: "play none none reverse" }
+      opacity: 0, 
+      y: 30, // Ridotto da 50 a 30 per essere più scattante
+      duration: 0.5, // Ridotto da 0.8 a 0.5 (più veloce)
+      stagger: 0.1, // Ridotto lo stacco tra una card e l'altra
+      ease: "power2.out", // Ease leggermente più secco
+      scrollTrigger: { 
+        trigger: cardsRef.value, 
+        start: "top 90%", // Parte quasi subito appena entra nello schermo
+        toggleActions: "play none none reverse" 
+      }
     });
   }
 };
@@ -151,8 +146,17 @@ const animateCards = () => {
 onMounted(() => {
   if (titleRef.value) {
     gsap.from(titleRef.value, {
-      opacity: 0, y: 50, duration: 1, ease: "power3.out",
-      scrollTrigger: { trigger: titleRef.value, start: "top bottom-=100", toggleActions: "play none none reverse" }
+      opacity: 0, 
+      y: 30, // Ridotto da 50 a 30
+      duration: 0.6, // Ridotto da 1 a 0.6 (Molto più veloce)
+      ease: "power2.out",
+      scrollTrigger: { 
+        trigger: titleRef.value, 
+        // "top 90%" significa: inizia quando la cima del titolo 
+        // arriva al 90% dell'altezza dello schermo (quindi molto presto, in basso)
+        start: "top 90%", 
+        toggleActions: "play none none reverse" 
+      }
     });
   }
   getEvents();

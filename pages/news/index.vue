@@ -8,9 +8,9 @@
           <p class="text-gray-600">Archivio completo degli aggiornamenti BVTA</p>
         </div>
 
-        <div class="space-y-6">
+        <div class="space-y-8">
           
-          <div v-if="loading" class="space-y-6">
+          <div v-if="loading" class="space-y-12">
             <div 
               v-for="n in itemsPerPage" 
               :key="n" 

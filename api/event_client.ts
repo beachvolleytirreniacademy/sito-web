@@ -50,7 +50,7 @@ export const EventsClient = {
   async getBySlug(slug: string) {
     const { data, error } = await supabase
       .from('events')
-      .select('*')
+      .select('*, locations(name, address, map_link)')
       .eq('slug', slug)
       .single()
     

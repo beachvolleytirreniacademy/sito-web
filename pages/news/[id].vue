@@ -92,7 +92,7 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import Main from "@/components/layout/Main.vue";
-import { supabase } from '~/supabase.js';
+import { NewsClient } from '~/api/news_client'
 
 const route = useRoute();
 const articleId = route.params.id; 
@@ -104,20 +104,15 @@ const getArticle = async () => {
   try {
     loading.value = true;
     
-    // Scarica la singola riga dalla tabella 'news' dove id corrisponde
-    let { data, error } = await supabase
-      .from('news')
-      .select('*')
-      .eq('id', articleId)
-      .single(); // .single() è importante: ci restituisce un oggetto {}, non un array []
+    const data = await NewsClient.getById(articleId);
 
-    if (error) throw error;
+    
     
     article.value = data;
 
   } catch (error) {
     console.error('Errore recupero articolo:', error.message);
-    article.value = null; // Assicura che mostri lo stato "Non trovato"
+    article.value = null;
   } finally {
     loading.value = false;
   }

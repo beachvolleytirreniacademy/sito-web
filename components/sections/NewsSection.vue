@@ -76,26 +76,22 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { supabase } from '~/supabase.js';
+import { NewsClient } from '~/api/news_client'
 
 const news = ref([]);
 const loading = ref(true);
 
 const getNews = async () => {
   try {
-    let { data, error } = await supabase
-      .from('news')
-      .select('*')
-      .order('date', { ascending: false }) // Dal più recente
-      .limit(3); // Prendiamo solo le ultime 3 per la home
-
-    if (error) throw error;
+    loading.value = true;
     
-    // Mappa i campi se nel DB i nomi sono diversi (es. image_url vs image)
-    // Qui assumo che nel DB la colonna si chiami 'image' come nel JSON
-    news.value = data;
-  } catch (e) {
-    console.error('Errore news:', e);
+    const response = await NewsClient.getPage(1,3);
+
+    news.value = response.data;
+
+  } catch (error) {
+    console.error('Errore caricamento news:', error.message);
+    news.value = null;
   } finally {
     loading.value = false;
   }

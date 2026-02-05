@@ -180,7 +180,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { supabase } from '~/supabase.js';
+import { ProductsClient } from '~/api/products_client';
 
 // CONFIGURAZIONE
 const vintedProfileUrl = "https://www.vinted.it/member/3133809858"; 
@@ -200,10 +200,7 @@ const getProducts = async () => {
   try {
     fetchLoading.value = true;
     
-    let { data, error } = await supabase
-      .from('products')
-      .select('*')
-      .order('id'); 
+    const data = await ProductsClient.getAll();
 
     if (error) throw error;
     products.value = data || [];

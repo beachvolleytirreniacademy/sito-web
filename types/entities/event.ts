@@ -3,7 +3,7 @@ export interface Event {
   created_at: string
   title: string
   slug: string
-  type: string
+  type: EventType
   category: string
   signup_link: string | null
   description: string | null

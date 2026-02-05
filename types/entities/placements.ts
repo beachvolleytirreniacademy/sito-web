@@ -23,5 +23,7 @@ export interface PlacementsTable {
   ]
 }
 
+
+
 export type PlacementInsert = PlacementsTable['Insert']
 export type PlacementUpdate = PlacementsTable['Update']

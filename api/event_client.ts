@@ -1,6 +1,7 @@
 import type { Event, EventInsert, EventUpdate } from '~/types/entities/event'
 import { supabase } from './supabase'
 
+
 export const EventsClient = {
   async getAll() {
     const { data, error } = await supabase

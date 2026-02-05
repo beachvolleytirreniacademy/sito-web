@@ -7,6 +7,18 @@ type PlacementWithTeam = Placement & { teams: Team }
 
 export const PlacementsClient = {
   
+   async getAll() {
+    const { data, error } = await supabase
+      .from('placements')
+      .select(`
+        *,
+        teams!placements_team_id_fkey ( * )
+      `)
+      .order('team_id', { ascending: true })
+    
+    if (error) throw error
+    return data as PlacementWithTeam[]
+  },
   
   async getRankingByDay(dayNumber: number) {
     const { data, error } = await supabase

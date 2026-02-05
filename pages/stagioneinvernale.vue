@@ -36,7 +36,7 @@
                   :src="team.photo_url || 'https://placehold.co/600x400?text=Team+BVTA'" 
                   :alt="team.name"
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                >
+                />
                 <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
               </div>
 
@@ -130,7 +130,7 @@
 
           </div>
 
-          <div v-if="teamsList.length === 0" class="text-center py-12 text-gray-500">
+          <div v-if="!loading && teamsList.length === 0" class="text-center py-12 text-gray-500">
              Non ci sono squadre registrate per questa stagione.
           </div>
 
@@ -143,8 +143,8 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import Main from "@/components/layout/Main.vue";
-import { supabase } from '~/supabase.js'
+import Main from "@/components/layout/Main.vue"
+import { TeamsClient } from '~/api/teams_client' // Importiamo il Client
 
 // Titoli statici della pagina
 const pageTitle = "Stagione Invernale 2025-2026";
@@ -157,23 +157,12 @@ const fetchTeams = async () => {
   try {
     loading.value = true;
 
-    // 1. Scarica Squadre + Piazzamenti (Join)
-    // placements(*) significa "prendi tutti i campi della tabella collegata placements"
-    let { data, error } = await supabase
-      .from('teams')
-      .select(`
-        *,
-        placements (
-          day_number,
-          rank
-        )
-      `)
-      .order('id', { ascending: true }); // Ordina le squadre per id
-
-    if (error) throw error;
+    // 1. Usiamo la NUOVA funzione del Client che fa la Join
+    const data = await TeamsClient.getAllWithResults();
 
     if (data) {
-      // 2. Trasforma i dati per il Frontend
+      // 2. Trasforma i dati per il Frontend (Logica di visualizzazione)
+      // Questa logica rimane nel componente perché riguarda "come mostrare i dati", non "come prenderli"
       teamsList.value = data.map(team => {
         
         // Ordina i risultati per giornata (1, 2, 3...)
@@ -183,7 +172,7 @@ const fetchTeams = async () => {
 
         // Crea un array 'formattedResults' che contiene le stringhe pronte per la grafica
         const formattedResults = sortedPlacements.map(p => ({
-          rank: p.rank, // Teniamo il numero puro per la logica dei colori (if rank === 1)
+          rank: p.rank,
           dayLabel: `${p.day_number}ª Tappa`,
           rankLabel: `${p.rank}° Posto`
         }));
@@ -191,13 +180,13 @@ const fetchTeams = async () => {
         return {
           ...team,
           isOpen: false, // Stato dell'accordion
-          formattedResults // I risultati belli e pronti
+          formattedResults 
         };
       });
     }
 
   } catch (error) {
-    console.error("Errore recupero squadre:", error.message);
+    console.error("Errore recupero squadre:", error);
   } finally {
     loading.value = false;
   }
@@ -208,7 +197,7 @@ const toggleTeam = (id) => {
     if (team.id === id) {
       team.isOpen = !team.isOpen
     } else {
-      team.isOpen = false // Chiude gli altri quando ne apri uno (opzionale)
+      team.isOpen = false // Chiude gli altri quando ne apri uno
     }
   })
 };

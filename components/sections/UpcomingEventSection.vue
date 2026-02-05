@@ -42,7 +42,7 @@
               color="primary"
               variant="soft"
               class="w-full bg-primary text-white hover:bg-primary-dark hover:text-white transition-colors duration-300"
-              :to="'/events/' + (event.slug || event.id)"
+              :to="'/events/' + (event.slug)"
             >
               {{ content.button.text }}
             </UButton>
@@ -66,7 +66,8 @@
 import { onMounted, ref, nextTick } from "vue";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { supabase } from '~/supabase.js'
+import { EventsClient } from '~/api/event_client';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -105,13 +106,7 @@ const getEvents = async () => {
     loading.value = true;
     const today = new Date().toISOString().split('T')[0];
 
-    let { data, error } = await supabase
-      .from('events')
-      .select('*')
-      .gte('end_date', today) 
-      .order('start_date', { ascending: true });
-
-    if (error) throw error;
+    const data = await EventsClient.getFutureEvents();
 
     if (data) {
       content.value.events = data;

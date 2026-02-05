@@ -190,7 +190,7 @@
 import { ref, onMounted, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import Main from "@/components/layout/Main.vue";
-import { supabase } from '~/supabase.js';
+import { EventsClient } from '~/api/event_client';
 
 const route = useRoute();
 const currentSlug = route.params.slug; 
@@ -208,21 +208,7 @@ const getEvent = async () => {
   try {
     loading.value = true;
 
-    // Assicurati che 'category' sia presente nella select
-    let { data, error } = await supabase
-      .from('events')
-      .select(`
-        *,
-        locations (
-          name,
-          address,
-          map_link
-        )
-      `)
-      .eq('slug', currentSlug)
-      .single();
-
-    if (error) throw error;
+    const data = await EventsClient.getBySlug(currentSlug);
     event.value = data;
 
   } catch (error) {

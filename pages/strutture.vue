@@ -92,7 +92,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import Main from "@/components/layout/Main.vue";
-import { supabase } from '~/supabase.js';
+import { LocationsClient } from '~/api/locations_client';
 
 // Testi statici della pagina (prima erano nel JSON wrapper)
 const pageTitle = "Le Nostre Strutture";
@@ -105,12 +105,8 @@ const fetchLocations = async () => {
   try {
     loading.value = true;
     
-    let { data, error } = await supabase
-      .from('locations')
-      .select('*')
-      .order('id', { ascending: true }); // Ordina per ID (o 'name' se preferisci alfabetico)
+    const data = await LocationsClient.getAll();
 
-    if (error) throw error;
     
     locations.value = data || [];
   } catch (error) {

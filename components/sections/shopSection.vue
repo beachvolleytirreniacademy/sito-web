@@ -205,7 +205,6 @@ const getProducts = async () => {
       .select('*')
       .order('id'); 
 
-    if (error) throw error;
     products.value = data || [];
   } catch (e) {
     console.error('Errore caricamento prodotti:', e);

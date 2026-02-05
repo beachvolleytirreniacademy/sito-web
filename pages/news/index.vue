@@ -113,7 +113,7 @@
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue';
 import Main from "@/components/layout/Main.vue";
-import { supabase } from '~/supabase.js';
+import { NewsClient } from '~/api/news_client'
 
 // Configurazione
 const itemsPerPage = 5;
@@ -128,25 +128,15 @@ const totalPages = computed(() => {
 });
 
 // Funzione principale di caricamento
+
 const fetchNews = async () => {
   try {
     loading.value = true;
     
-    // Calcoliamo il range per Supabase (es. pagina 1: 0-4, pagina 2: 5-9)
-    const from = (currentPage.value - 1) * itemsPerPage;
-    const to = from + itemsPerPage - 1;
+    const response = await NewsClient.getPage(currentPage.value, itemsPerPage);
 
-    // Query: Scarica news, conta il totale, ordina per data decrescente e prendi solo il range
-    const { data, count, error } = await supabase
-      .from('news')
-      .select('*', { count: 'exact' }) // 'exact' ci restituisce il numero totale di news
-      .order('date', { ascending: false })
-      .range(from, to);
-
-    if (error) throw error;
-
-    news.value = data || [];
-    totalCount.value = count || 0;
+    news.value = response.data;
+    totalCount.value = response.count;
 
   } catch (error) {
     console.error('Errore caricamento news:', error.message);

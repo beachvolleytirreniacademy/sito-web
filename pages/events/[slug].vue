@@ -19,11 +19,11 @@
       <UContainer v-else-if="event">
         
         <NuxtLink 
-          :to="'/'" 
-          class="inline-flex items-center text-gray-500 hover:text-primary mb-8 transition-colors font-medium"
+          :to="'/events'" 
+          class="inline-flex items-center !text-primary hover:text-primary mb-8 transition-colors font-medium"
         >
-          <UIcon name="i-heroicons-arrow-left" class="mr-2" />
-          Torna alla Home
+          <UIcon name="i-heroicons-arrow-left" class="mr-2 !text-primary" />
+          Torna agli Eventi
         </NuxtLink>
 
         <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-5xl mx-auto">

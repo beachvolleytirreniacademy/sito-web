@@ -132,16 +132,32 @@
     </div>
 
     <ul class="space-y-3">
-      <li v-for="e in list" :key="e.id" class="flex justify-between items-center p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-        <div>
+      <li v-for="e in list" :key="e.id" 
+          class="flex flex-col md:flex-row justify-between items-start md:items-center p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+        
+        <div class="mb-3 md:mb-0 w-full">
           <span class="font-bold text-gray-900 block text-lg">{{ e.title }}</span>
-          <span class="text-sm font-medium text-gray-600 flex items-center gap-1">
-             📅 {{ e.start_date }} <span class="mx-1">•</span> <span class="uppercase text-xs font-bold text-primary">{{ e.type }}</span>
+          
+          <span class="text-sm font-medium text-gray-600 flex flex-wrap items-center gap-1 mt-1">
+              <span>📅 {{ e.start_date }}</span>
+              <span class="mx-1 hidden md:inline">•</span>
+              <span class="uppercase text-xs font-bold text-primary bg-primary-50 px-2 py-0.5 rounded border border-primary-100 ml-1 md:ml-0">
+                {{ e.type }}
+              </span>
           </span>
         </div>
-        <div class="flex gap-2">
-          <UButton size="sm" color="orange" variant="solid" class="text-black" @click="edit(e)">Modifica</UButton>
-          <UButton size="sm" variant="ghost" class="bg-red-600 text-white hover:bg-red-700 transition-colors font-bold" @click="remove(e.id)">Elimina</UButton>
+
+        <div class="flex gap-2 w-full md:w-auto">
+          <UButton size="sm" color="orange" variant="solid" 
+                   class="text-black flex-1 md:flex-none justify-center" 
+                   @click="edit(e)">
+            Modifica
+          </UButton>
+          <UButton size="sm" variant="ghost" 
+                   class="bg-red-600 text-white hover:bg-red-700 transition-colors font-bold flex-1 md:flex-none justify-center" 
+                   @click="remove(e.id)">
+            Elimina
+          </UButton>
         </div>
       </li>
     </ul>

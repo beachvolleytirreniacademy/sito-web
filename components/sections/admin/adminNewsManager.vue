@@ -84,17 +84,30 @@
       <h3 class="font-bold text-gray-900 text-lg mb-4">Articoli Pubblicati</h3>
       <div v-if="loading" class="text-gray-600 font-medium">Caricamento...</div>
       <ul v-else class="space-y-3">
-        <li v-for="item in newsList" :key="item.id" class="flex justify-between items-center p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-          <div>
-             <span class="font-bold text-gray-900 block text-lg">{{ item.title }}</span>
-             <span class="text-sm text-gray-600 font-medium">Pubblicato il: {{ item.date }}</span>
-          </div>
-          <div class="flex gap-2">
-            <UButton size="sm" color="orange" variant="solid" class="text-black" @click="editItem(item)">Modifica</UButton>
-            <UButton size="sm" variant="ghost" class="bg-red-600 text-white hover:bg-red-700 transition-colors font-bold" @click="deleteItem(item.id)">Elimina</UButton>
-          </div>
-        </li>
-      </ul>
+      <li v-for="item in newsList" :key="item.id" 
+          class="flex flex-col md:flex-row justify-between items-start md:items-center p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+        
+        <div class="mb-3 md:mb-0 w-full">
+           <span class="font-bold text-gray-900 block text-lg">{{ item.title }}</span>
+           <span class="text-sm text-gray-600 font-medium block mt-1">
+             Pubblicato il: {{ item.date }}
+           </span>
+        </div>
+
+        <div class="flex gap-2 w-full md:w-auto">
+          <UButton size="sm" color="orange" variant="solid" 
+                   class="text-black flex-1 md:flex-none justify-center" 
+                   @click="editItem(item)">
+            Modifica
+          </UButton>
+          <UButton size="sm" variant="ghost" 
+                   class="bg-red-600 text-white hover:bg-red-700 transition-colors font-bold flex-1 md:flex-none justify-center" 
+                   @click="deleteItem(item.id)">
+            Elimina
+          </UButton>
+        </div>
+      </li>
+    </ul>
     </div>
   </div>
 </template>

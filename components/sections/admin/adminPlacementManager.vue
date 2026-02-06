@@ -42,23 +42,30 @@
       
       <div v-if="loading" class="text-gray-600 font-medium">Caricamento...</div>
       
+      
       <ul v-else class="space-y-3">
-        <li v-for="p in list" :key="p.id" class="flex justify-between items-center p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-          <div>
+        <li v-for="p in list" :key="p.id" 
+            class="flex flex-col md:flex-row justify-between items-start md:items-center p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+          
+          <div class="mb-3 md:mb-0 w-full">
             <span class="font-bold text-gray-900 block text-lg">
               {{ p.teams?.name || 'Squadra non trovata' }}
             </span>
             
-            <span class="text-sm font-medium text-gray-600 flex items-center gap-2 mt-1">
+            <span class="text-sm font-medium text-gray-600 flex flex-wrap items-center gap-2 mt-1">
               <span class="bg-blue-100 text-blue-800 px-2 py-0.5 rounded text-xs border border-blue-200 font-bold">Giornata {{ p.day_number }}</span>
               <span>Posizione: <strong class="text-gray-900">{{ p.rank }}°</strong></span>
               <span v-if="p.teams?.category" class="text-gray-400 text-xs border-l pl-2 ml-1">{{ p.teams.category }}</span>
             </span>
           </div>
 
-          <div class="flex gap-2">
-            <UButton size="sm" color="orange" class="text-black" variant="solid" @click="edit(p)">Modifica</UButton>
-            <UButton size="sm" variant="ghost" class="bg-red-600 text-white hover:bg-red-700 transition-colors font-bold" @click="remove(p.id)">Elimina</UButton>
+          <div class="flex gap-2 w-full md:w-auto">
+            <UButton size="sm" color="orange" class="text-black flex-1 md:flex-none justify-center" variant="solid" @click="edit(p)">
+              Modifica
+            </UButton>
+            <UButton size="sm" variant="ghost" class="bg-red-600 text-white hover:bg-red-700 transition-colors font-bold flex-1 md:flex-none justify-center" @click="remove(p.id)">
+              Elimina
+            </UButton>
           </div>
         </li>
       </ul>

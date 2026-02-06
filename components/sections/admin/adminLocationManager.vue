@@ -92,17 +92,31 @@
     </div>
 
     <ul class="space-y-3">
-      <li v-for="loc in list" :key="loc.id" class="flex justify-between items-center p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-        <div>
+      <li v-for="loc in list" :key="loc.id" 
+          class="flex flex-col md:flex-row justify-between items-start md:items-center p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+        
+        <div class="mb-3 md:mb-0 w-full">
           <span class="font-bold text-gray-900 block text-lg">{{ loc.name }}</span>
-          <span class="text-sm text-gray-700 font-medium block truncate max-w-xs mb-1">{{ loc.address }}</span>
+          
+          <span class="text-sm text-gray-700 font-medium block truncate w-full md:max-w-xs mb-1">
+            {{ loc.address }}
+          </span>
+          
           <div class="flex gap-1 mt-1 flex-wrap">
-            <span v-for="(f, i) in (loc.features || []).slice(0, 3)" :key="i" class="text-[11px] font-bold bg-blue-100 text-blue-800 px-2 py-0.5 rounded border border-blue-200">{{ f }}</span>
+            <span v-for="(f, i) in (loc.features || []).slice(0, 3)" :key="i" 
+                  class="text-[11px] font-bold bg-blue-100 text-blue-800 px-2 py-0.5 rounded border border-blue-200">
+              {{ f }}
+            </span>
           </div>
         </div>
-        <div class="flex gap-2">
-          <UButton size="sm" class="text-black" color="orange" variant="solid" @click="edit(loc)">Modifica</UButton>
-          <UButton size="sm" variant="ghost" class="bg-red-600 text-white hover:bg-red-700 transition-colors font-bold" @click="remove(loc.id)">Elimina</UButton>
+
+        <div class="flex gap-2 w-full md:w-auto">
+          <UButton size="sm" class="text-black flex-1 md:flex-none justify-center" color="orange" variant="solid" @click="edit(loc)">
+            Modifica
+          </UButton>
+          <UButton size="sm" variant="ghost" class="bg-red-600 text-white hover:bg-red-700 transition-colors font-bold flex-1 md:flex-none justify-center" @click="remove(loc.id)">
+            Elimina
+          </UButton>
         </div>
       </li>
     </ul>

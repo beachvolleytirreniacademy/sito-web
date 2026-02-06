@@ -98,28 +98,36 @@
     </div>
 
     <ul class="space-y-3">
-      <li v-for="p in list" :key="p.id" class="flex justify-between items-center p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-        <div class="flex items-center gap-4">
-          <img v-if="p.image" :src="p.image" class="w-12 h-12 rounded-md object-cover bg-gray-300 border border-gray-200" />
-          <div v-else class="w-12 h-12 rounded-md bg-gray-200 flex items-center justify-center text-gray-400">
+      <li v-for="p in list" :key="p.id" 
+          class="flex flex-col md:flex-row justify-between items-start md:items-center p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+        
+        <div class="flex items-center gap-4 mb-3 md:mb-0 w-full">
+          <img v-if="p.image" :src="p.image" class="w-12 h-12 rounded-md object-cover bg-gray-300 border border-gray-200 shrink-0" />
+          <div v-else class="w-12 h-12 rounded-md bg-gray-200 flex items-center justify-center text-gray-400 shrink-0">
             <UIcon name="i-heroicons-photo" />
           </div>
 
           <div>
-            <span class="font-bold text-gray-900 block text-lg">{{ p.name }}</span>
-            <div class="flex items-center gap-2">
+            <span class="font-bold text-gray-900 block text-lg leading-tight">{{ p.name }}</span>
+            <div class="flex flex-wrap items-center gap-2 mt-1">
               <span class="text-xs font-bold uppercase tracking-wide bg-gray-200 text-gray-800 px-2 py-0.5 rounded">{{ p.type }}</span>
-              <span class="text-sm font-bold text-primary-600">{{ p.price }}€</span>
+              <span class="text-sm font-bold text-black">{{ p.price }}€</span>
             </div>
           </div>
         </div>
         
-        <div class="flex gap-2">
-          <UButton size="sm" color="orange" class="text-black" variant="solid" @click="edit(p)">Modifica</UButton>
-          <UButton size="sm" variant="ghost" class="bg-red-600 text-white hover:bg-red-700 transition-colors font-bold" @click="remove(p.id)">Elimina</UButton>
+        <div class="flex gap-2 w-full md:w-auto">
+          <UButton size="sm" color="orange" class="text-black flex-1 md:flex-none justify-center" variant="solid" @click="edit(p)">
+            Modifica
+          </UButton>
+          <UButton size="sm" variant="ghost" class="bg-red-600 text-white hover:bg-red-700 transition-colors font-bold flex-1 md:flex-none justify-center" @click="remove(p.id)">
+            Elimina
+          </UButton>
         </div>
       </li>
     </ul>
+    
+
   </div>
 </template>
 

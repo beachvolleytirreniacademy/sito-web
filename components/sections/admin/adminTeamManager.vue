@@ -82,14 +82,48 @@
     </div>
 
     <ul class="space-y-3">
-      <li v-for="t in list" :key="t.id" class="flex justify-between items-center p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
-          <span class="font-bold text-gray-900 text-lg">{{ t.name }}</span>
-          <span class="text-xs font-bold text-gray-800 bg-gray-200 border border-gray-300 px-2 py-1 rounded w-fit">{{ t.category }}</span>
+      <li v-for="t in list" :key="t.id" 
+          class="flex flex-col md:flex-row justify-between items-start md:items-center p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+        
+        <div class="flex items-start gap-4 w-full mb-4 md:mb-0">
+          
+          <img v-if="t.photo_url" :src="t.photo_url" 
+               class="w-16 h-16 rounded-md object-cover border border-gray-200 shrink-0 bg-gray-100" 
+               alt="Foto Squadra" />
+          
+          <div class="w-full">
+            <div class="flex flex-wrap items-center gap-2 mb-1">
+              <span class="font-bold text-gray-900 text-lg">{{ t.name }}</span>
+              <span v-if="t.category" class="text-xs font-bold text-gray-800 bg-gray-200 border border-gray-300 px-2 py-0.5 rounded">
+                {{ t.category }}
+              </span>
+            </div>
+
+            <div v-if="t.coach" class="text-sm text-gray-600 font-medium flex items-center gap-1 mb-2">
+              <UIcon name="i-heroicons-user" class="w-4 h-4" />
+              Coach: <span class="text-gray-900">{{ t.coach }}</span>
+            </div>
+
+            <div v-if="t.players && t.players.length > 0" class="flex flex-wrap gap-1">
+              <span v-for="(player, idx) in t.players" :key="idx" 
+                    class="text-[11px] font-semibold bg-blue-50 text-blue-700 px-2 py-0.5 rounded border border-blue-100">
+                {{ player }}
+              </span>
+            </div>
+          </div>
         </div>
-        <div class="flex gap-2">
-          <UButton size="sm" color="orange" variant="solid" class="text-black" @click="edit(t)">Modifica</UButton>
-          <UButton size="sm" variant="ghost" class="bg-red-600 text-white hover:bg-red-700 transition-colors font-bold" @click="remove(t.id)">Elimina</UButton>
+
+        <div class="flex gap-2 w-full md:w-auto shrink-0">
+          <UButton size="sm" color="orange" variant="solid" 
+                   class="text-black flex-1 md:flex-none justify-center" 
+                   @click="edit(t)">
+            Modifica
+          </UButton>
+          <UButton size="sm" variant="ghost" 
+                   class="bg-red-600 text-white hover:bg-red-700 transition-colors font-bold flex-1 md:flex-none justify-center" 
+                   @click="remove(t.id)">
+            Elimina
+          </UButton>
         </div>
       </li>
     </ul>

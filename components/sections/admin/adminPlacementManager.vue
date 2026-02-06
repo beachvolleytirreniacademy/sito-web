@@ -9,7 +9,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
         <div>
-          <label class="block text-sm font-bold text-gray-800 mb-1">Seleziona Squadra</label>
+          <label class="block text-sm font-bold text-gray-800 mb-1">Seleziona Squadra <span class="text-red-500">*</span></label>
           <select 
             v-model="form.team_id" 
             class="w-full h-[38px] px-3 py-2 bg-white border border-gray-300 rounded-md text-sm text-gray-900 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 shadow-sm outline-none transition-all cursor-pointer block"
@@ -20,19 +20,19 @@
         </div>
 
         <div>
-          <label class="block text-sm font-bold text-gray-800 mb-1">Giornata (N°)</label>
+          <label class="block text-sm font-bold text-gray-800 mb-1">Giornata (N°) <span class="text-red-500">*</span></label>
           <UInput type="number" v-model="form.day_number" class="bg-white" />
         </div>
 
         <div>
-          <label class="block text-sm font-bold text-gray-800 mb-1">Posizione (Rank)</label>
+          <label class="block text-sm font-bold text-gray-800 mb-1">Posizione (Rank) <span class="text-red-500">*</span></label>
           <UInput type="number" v-model="form.rank" class="bg-white" />
         </div>
 
       </div>
 
       <div class="flex gap-3 pt-6 mt-4 border-t border-gray-300">
-         <UButton @click="save" color="primary" class="font-bold px-6">{{ isEditing ? 'Salva Modifiche' : 'Salva Risultato' }}</UButton>
+         <UButton @click="save" color="primary" class="font-bold px-6 !bg-[#FD7F00] hover:!bg-[#e67300] !text-gray-800 ">{{ isEditing ? 'Salva Modifiche' : 'Salva Risultato' }}</UButton>
          <UButton v-if="isEditing" @click="reset" color="gray" class="bg-gray-600 text-white hover:bg-gray-200 transition-colors font-bold"  variant="solid">Annulla</UButton>
       </div>
     </div>

@@ -12,12 +12,12 @@
         </div>
         
         <div>
-          <label class="block text-sm font-bold text-gray-800 mb-1">Prezzo (€)</label>
+          <label class="block text-sm font-bold text-gray-800 mb-1">Prezzo (€) <span class="text-red-500">*</span></label>
           <UInput type="number" v-model="form.price" placeholder="0.00" class="bg-white" />
         </div>
         
         <div>
-          <label class="block text-sm font-bold text-gray-800 mb-1">Tipo Vendita</label>
+          <label class="block text-sm font-bold text-gray-800 mb-1">Tipo Vendita <span class="text-red-500">*</span></label>
           <select 
             v-model="form.type" 
             class="w-full h-[38px] px-3 py-2 bg-white border border-gray-300 rounded-md text-sm text-gray-900 focus:ring-2 focus:ring-primary-500 shadow-sm outline-none transition-all cursor-pointer block"
@@ -35,7 +35,7 @@
         </div>
         
         <div class="md:col-span-full">
-          <label class="block text-sm font-bold text-gray-800 mb-1">Descrizione</label>
+          <label class="block text-sm font-bold text-gray-800 mb-1">Descrizione <span class="text-red-500">*</span> </label>
           <UTextarea v-model="form.description" placeholder="Taglie disponibili, materiali..." class="bg-white" />
         </div>
 
@@ -92,7 +92,7 @@
       </div>
 
       <div class="flex gap-3 pt-6 mt-4 border-t border-gray-300">
-        <UButton @click="save" color="primary" class="font-bold px-6">{{ isEditing ? 'Salva Modifiche' : 'Crea Prodotto' }}</UButton>
+        <UButton @click="save" color="primary" class="font-bold px-6 !bg-[#FD7F00] hover:!bg-[#e67300] !text-gray-800 ">{{ isEditing ? 'Salva Modifiche' : 'Crea Prodotto' }}</UButton>
         <UButton v-if="isEditing" @click="reset" color="gray" class="bg-gray-600 text-white hover:bg-gray-200 transition-colors font-bold"  variant="solid">Annulla</UButton>
       </div>
     </div>
@@ -233,8 +233,9 @@ const handleImageUpload = async (event) => {
 }
 
 const save = async () => {
-  if (!form.value.name) return alert("Il nome prodotto è obbligatorio")
-
+  if (!form.value.name || !form.value.price || !form.value.type || !form.value.description ) return alert("Inserisci tutti i campi obbligatori")
+  if (form.value.price <= 0) return alert("Hai inserito un prezzo pari a zero")
+  
   try {
     const payload = { ...form.value }
     delete payload.id 

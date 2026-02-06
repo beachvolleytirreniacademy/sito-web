@@ -13,22 +13,22 @@
         </div>
         
         <div>
-           <label class="block text-sm font-bold text-gray-800 mb-1">Indirizzo</label>
+           <label class="block text-sm font-bold text-gray-800 mb-1">Indirizzo </label>
            <UInput v-model="form.address" placeholder="Via del mare 123, Pisa" class="bg-white" />
         </div>
         
         <div>
-           <label class="block text-sm font-bold text-gray-800 mb-1">Link Google Maps</label>
+           <label class="block text-sm font-bold text-gray-800 mb-1">Link Google Maps <span class="text-red-500">*</span></label>
            <UInput v-model="form.map_link" placeholder="https://maps..." icon="i-heroicons-map-pin" class="bg-white" />
         </div>
 
         <div class="md:col-span-full">
-          <label class="block text-sm font-bold text-gray-800 mb-1">Descrizione</label>
+          <label class="block text-sm font-bold text-gray-800 mb-1">Descrizione <span class="text-red-500">*</span> </label>
           <UTextarea v-model="form.description" placeholder="Descrivi i servizi..." class="bg-white" />
         </div>
 
         <div class="md:col-span-full">
-          <label class="block text-sm font-bold text-gray-800 mb-1">Caratteristiche (Separate da virgola)</label>
+          <label class="block text-sm font-bold text-gray-800 mb-1">Caratteristiche (Separate da virgola) <span class="text-red-500">*</span></label>
           <UTextarea v-model="featuresString" placeholder="Es: 3 Campi, Docce Calde, Bar" rows="2" class="bg-white" />
           <p class="text-xs text-gray-600 font-medium mt-1">Il sistema creerà automaticamente le etichette.</p>
         </div>
@@ -86,7 +86,7 @@
       </div>
 
       <div class="flex gap-3 pt-6 mt-4 border-t border-gray-300">
-        <UButton @click="save" color="primary" class="font-bold px-6">{{ isEditing ? 'Salva Modifiche' : 'Crea Location' }}</UButton>
+        <UButton @click="save" color="primary" class="font-bold px-6 !bg-[#FD7F00] hover:!bg-[#e67300] !text-gray-800 ">{{ isEditing ? 'Salva Modifiche' : 'Crea Location' }}</UButton>
         <UButton v-if="isEditing" @click="reset" color="gray" class="bg-gray-600 text-white hover:bg-gray-200 transition-colors font-bold"  variant="solid">Annulla</UButton>
       </div>
     </div>
@@ -217,7 +217,7 @@ const handleImageUpload = async (event) => {
 }
 
 const save = async () => {
-  if (!form.value.name) return alert("Il nome della struttura è obbligatorio")
+  if (!form.value.name || !form.value.map_link || !form.value.features || !form.value.description ) return alert("Inserisci i campi obbligatori")
 
   try {
     const featuresArray = featuresString.value.split(',').map(s => s.trim()).filter(s => s !== '')

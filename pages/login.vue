@@ -16,7 +16,14 @@
 
         <p v-if="error" class="text-red-500 text-sm">{{ error }}</p>
         
-        <UButton type="submit" block color="primary" :loading="loading">Accedi</UButton>
+        <UButton 
+          type="submit" 
+          block 
+          :loading="loading"
+          class="!bg-[#FD7F00] hover:!bg-[#e67300] !text-white font-bold"
+        >
+          Accedi
+        </UButton>
       </form>
     </div>
   </div>
@@ -45,7 +52,6 @@ const handleLogin = async () => {
   if (authError) {
     error.value = "Credenziali errate"
   } else {
-    // Se login ok, vai alla dashboard
     router.push('/admin/dashboard')
   }
   loading.value = false

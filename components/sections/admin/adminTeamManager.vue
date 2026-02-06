@@ -11,7 +11,7 @@
           <UInput v-model="form.name" placeholder="Es. I Pirati" class="bg-white" />
         </div>
         <div>
-          <label class="block text-sm font-bold text-gray-800 mb-1">Categoria</label>
+          <label class="block text-sm font-bold text-gray-800 mb-1">Categoria <span class="text-red-500">*</span></label>
           <UInput v-model="form.category" placeholder="Es. Gold Maschile" class="bg-white" />
         </div>
         <div>
@@ -70,13 +70,13 @@
         </div>
 
         <div class="md:col-span-full">
-          <label class="block text-sm font-bold text-gray-800 mb-1">Rosa Giocatori (Separati da virgola)</label>
+          <label class="block text-sm font-bold text-gray-800 mb-1">Rosa Giocatori (Separati da virgola) <span class="text-red-500">*</span></label>
           <UTextarea v-model="playersString" :rows="3" placeholder="Es: Mario Rossi, Luigi Bianchi, Francesca Verdi" class="bg-white" />
         </div>
       </div>
       
       <div class="flex gap-3 pt-6 mt-4 border-t border-gray-300">
-        <UButton @click="save" color="primary" class="font-bold px-6">Salva Squadra</UButton>
+        <UButton @click="save" color="primary" class="font-bold px-6 !bg-[#FD7F00] hover:!bg-[#e67300] !text-gray-800 ">Salva Squadra</UButton>
         <UButton v-if="isEditing" @click="reset" color="gray" class="bg-gray-600 text-white hover:bg-gray-200 transition-colors font-bold"  variant="solid">Annulla</UButton>
       </div>
     </div>
@@ -222,6 +222,8 @@ const handleImageUpload = async (event) => {
 
 const save = async () => {
   if (!form.value.name) return alert("Il nome della squadra è obbligatorio")
+  if (!form.value.players) return alert("Inserisci i giocatori del team")
+  if (!form.value.category) return alert("Inserisci la categoria")
 
   try {
     const playersArray = playersString.value.split(',').map(s => s.trim()).filter(s => s !== '')

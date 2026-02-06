@@ -13,7 +13,7 @@
         </div>
 
         <div>
-          <label class="block text-sm font-bold text-gray-800 mb-1">Tipo</label>
+          <label class="block text-sm font-bold text-gray-800 mb-1">Tipo <span class="text-red-500">*</span></label>
           <select 
             v-model="form.type" 
             class="w-full h-[38px] px-3 py-2 bg-white border border-gray-300 rounded-md text-sm text-gray-900 focus:ring-2 focus:ring-primary-500 shadow-sm outline-none transition-all cursor-pointer block"
@@ -45,7 +45,7 @@
         </div>
 
         <div>
-          <label class="block text-sm font-bold text-gray-800 mb-1">Dove si gioca?</label>
+          <label class="block text-sm font-bold text-gray-800 mb-1">Dove si gioca? <span class="text-red-500">*</span></label>
           <select 
             v-model="form.location_id" 
             class="w-full h-[38px] px-3 py-2 bg-white border border-gray-300 rounded-md text-sm text-gray-900 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 shadow-sm outline-none transition-all cursor-pointer"
@@ -126,7 +126,14 @@
       </div>
 
       <div class="flex gap-3 pt-6 mt-4 border-t border-gray-300">
-        <UButton @click="save" color="primary" size="md" class="font-bold px-6">{{ isEditing ? 'Salva Modifiche' : 'Crea Evento' }}</UButton>
+        <UButton 
+          @click="save" 
+          size="md" 
+          class="font-bold px-6 !bg-[#FD7F00] hover:!bg-[#e67300] !text-gray-800 "
+        >
+          {{ isEditing ? 'Salva Modifiche' : 'Crea Evento' }}
+        </UButton>
+
         <UButton v-if="isEditing" @click="reset" color="gray" class="bg-gray-600 text-white hover:bg-gray-200 transition-colors font-bold" variant="solid">Annulla</UButton>
       </div>
     </div>
@@ -141,7 +148,7 @@
           <span class="text-sm font-medium text-gray-600 flex flex-wrap items-center gap-1 mt-1">
               <span>📅 {{ e.start_date }}</span>
               <span class="mx-1 hidden md:inline">•</span>
-              <span class="uppercase text-xs font-bold text-primary bg-primary-50 px-2 py-0.5 rounded border border-primary-100 ml-1 md:ml-0">
+              <span class="uppercase text-xs font-bold text-[#FD7F00] bg-orange-50 px-2 py-0.5 rounded border border-orange-100 ml-1 md:ml-0">
                 {{ e.type }}
               </span>
           </span>
@@ -169,8 +176,6 @@ import { ref, onMounted } from 'vue'
 import { EventType } from '~/types/entities/event' 
 import { EventsClient } from '~/api/event_client'     
 import { LocationsClient } from '~/api/locations_client' 
-
-// 🔥 MODIFICA FONDAMENTALE: Usiamo il tuo client manuale, non quello di Nuxt
 import { supabase } from '~/api/supabase'
 
 // 2. Opzioni per il menu a tendina
@@ -216,9 +221,6 @@ const handleImageUpload = async (event) => {
   const file = event.target.files[0]
   if (!file) return
 
-  // 1. CONTROLLO LOGIN:
-  // Poiché usiamo il client 'supabase' importato manualmente, 
-  // questo leggerà il LocalStorage (il vecchio metodo) e troverà la sessione corretta.
   const { data: { session } } = await supabase.auth.getSession()
   
   if (!session) {
@@ -226,7 +228,6 @@ const handleImageUpload = async (event) => {
     return
   }
 
-  // 2. Controllo Titolo
   if (!form.value.title) {
     alert("Inserisci prima il 'Titolo Evento' per poter caricare la foto.")
     event.target.value = ''
@@ -287,7 +288,9 @@ const save = async () => {
     !form.value.category || 
     !form.value.start_date || 
     !form.value.end_date || 
-    !form.value.description
+    !form.value.description ||
+    !form.value.type ||
+    !form.value.location_id
   ) {
     alert("Compila tutti i campi obbligatori (*)")
     return 

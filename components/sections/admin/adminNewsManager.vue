@@ -18,7 +18,7 @@
         </div>
 
         <div class="md:col-span-full">
-          <label class="block text-sm font-bold text-gray-800 mb-1">Contenuto Articolo</label>
+          <label class="block text-sm font-bold text-gray-800 mb-1">Contenuto Articolo <span class="text-red-500">*</span></label>
           <UTextarea v-model="form.body" :rows="8" placeholder="Scrivi qui il testo..." class="bg-white" />
         </div>
         
@@ -75,7 +75,7 @@
       </div>
       
       <div class="flex gap-3 pt-6 mt-4 border-t border-gray-300">
-        <UButton @click="saveNews" color="primary" class="font-bold px-6">{{ isEditing ? 'Aggiorna' : 'Pubblica' }}</UButton>
+        <UButton @click="saveNews" color="primary" class="font-bold px-6 !bg-[#FD7F00] hover:!bg-[#e67300] !text-gray-800 ">{{ isEditing ? 'Aggiorna' : 'Pubblica' }}</UButton>
         <UButton v-if="isEditing" @click="resetForm" color="gray" class="bg-gray-600 text-white hover:bg-gray-200 transition-colors font-bold"  variant="solid">Annulla</UButton>
       </div>
     </div>
@@ -202,8 +202,8 @@ const handleImageUpload = async (event) => {
 }
 
 const saveNews = async () => {
-  if (!form.value.title) return alert("Il titolo è obbligatorio")
-
+  if (!form.value.title ) return alert("Il titolo è obbligatorio")
+  if (!form.value.body ) return alert("La descrizione è obbligatoria")
   try {
     const payload = { ...form.value }
     delete payload.id

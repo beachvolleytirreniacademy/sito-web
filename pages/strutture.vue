@@ -90,6 +90,39 @@
 </template>
 
 <script setup>
+
+// In pages/strutture.vue
+import { useHead } from '#imports'
+// Magari qui importi una foto specifica dei campi
+import struttureImage from '~/assets/images/campi-beach.jpg' 
+
+useHead({
+  // 1. TITOLO UNICO
+  title: 'Campi Beach Volley Tirrenia Academy | Strutture BVTA',
+  
+  meta: [
+    // 2. DESCRIZIONE UNICA
+    { 
+      name: 'description', 
+      content: 'Prenota i migliori campi da Beach Volley a Tirrenia. Campi professionali e spogliatoi.' 
+    },
+    
+    // Social (Open Graph) specifici per questa pagina
+    { property: 'og:title', content: 'Gioca nei nostri campi di beach volley a Tirrenia' },
+    { property: 'og:description', content: 'Scopri le nostre strutture: campi e sabbia top.' },
+    
+
+    //{ property: 'og:image', content: struttureImage },
+  ],
+  
+  // 3. LINK CANONICO (Fondamentale: cambia l'URL finale!)
+  link: [
+    { rel: 'canonical', href: 'https://www.beachvolleytirreniacademy.it/strutture' } 
+  ]
+})
+
+
+
 import { ref, onMounted } from 'vue';
 import Main from "@/components/layout/Main.vue";
 import { LocationsClient } from '~/api/locations_client';

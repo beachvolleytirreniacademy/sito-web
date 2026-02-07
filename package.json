@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@nuxt/ui": "^3.0.0-alpha.11",
+    "@nuxtjs/robots": "^5.7.0",
+    "@nuxtjs/sitemap": "^7.6.0",
     "@nuxtjs/supabase": "^2.0.3",
     "@supabase/supabase-js": "^2.94.0",
     "@vueuse/core": "^12.4.0",

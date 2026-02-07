@@ -140,6 +140,40 @@
 </template>
 
 <script setup>
+
+// In pages/strutture.vue
+import { useHead } from '#imports'
+// Magari qui importi una foto specifica dei campi
+import struttureImage from '~/assets/images/campi-beach.jpg' 
+
+useHead({
+  // 1. TITOLO UNICO
+  title: 'Sponsor Beach Volley Tirrenia Academy | Sponsor BVTA',
+  
+  meta: [
+    // 2. DESCRIZIONE UNICA
+    { 
+      name: 'description', 
+      content: 'Diventa sponsor della Beach Volley Tirrenia Academy.' 
+    },
+    
+    // Social (Open Graph) specifici per questa pagina
+    { property: 'og:title', content: 'Diventa sposnor della  Beach Volley Tirrenia Academy' },
+    { property: 'og:description', content: 'Scopri le nostre offerte di collaborazione.' },
+    
+
+    //{ property: 'og:image', content: struttureImage },
+  ],
+  
+  // 3. LINK CANONICO (Fondamentale: cambia l'URL finale!)
+  link: [
+    { rel: 'canonical', href: 'https://www.beachvolleytirreniacademy.it/sponsor' } 
+  ]
+})
+
+
+
+
 import { ref } from 'vue'
 import Main from "@/components/layout/Main.vue";
 

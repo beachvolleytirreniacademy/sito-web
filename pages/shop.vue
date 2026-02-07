@@ -11,7 +11,7 @@ import shopSection from "@/components/sections/shopSection.vue";
 // In pages/strutture.vue
 import { useHead } from '#imports'
 // Magari qui importi una foto specifica dei campi
-import struttureImage from '~/assets/images/campi-beach.jpg' 
+
 
 useHead({
   // 1. TITOLO UNICO

@@ -1,8 +1,7 @@
 <template>
   <section class="py-4">
-    <UContainer>  
+    <UContainer>
       <div class="grid gap-1 overflow-hidden">
-        <!-- Top row - Two small images on mobile/tablet -->
         <div class="grid grid-cols-2 gap-1 lg:hidden">
           <GalleryImage
             variant="medium"
@@ -18,9 +17,7 @@
           />
         </div>
 
-        <!-- Desktop layout -->
         <div class="hidden lg:grid lg:grid-cols-4 gap-1">
-          <!-- Left column -->
           <div class="grid gap-1 overflow-hidden">
             <GalleryImage
               variant="medium"
@@ -36,7 +33,6 @@
             />
           </div>
 
-          <!-- Center image -->
           <div class="col-span-2">
             <GalleryImage
               variant="double"
@@ -46,7 +42,6 @@
             />
           </div>
 
-          <!-- Right column -->
           <div class="grid gap-1">
             <GalleryImage
               variant="medium"
@@ -63,7 +58,6 @@
           </div>
         </div>
 
-        <!-- Center image - mobile/tablet -->
         <div class="lg:hidden">
           <GalleryImage
             variant="wide"
@@ -73,7 +67,6 @@
           />
         </div>
 
-        <!-- Bottom row - Two small images on mobile/tablet -->
         <div class="grid grid-cols-2 lg:hidden gap-1">
           <GalleryImage
             variant="medium"
@@ -90,7 +83,6 @@
         </div>
       </div>
 
-      <!-- "Vedi altro" link -->
       <div class="mt-0">
         <NuxtLink 
           to="https://linktr.ee/bvta?utm_source=linktree_profile_share&ltsid=16a184cf-0778-4eb2-aacc-5cfbb93008dd" 
@@ -106,29 +98,26 @@
         </NuxtLink>
       </div>
     </UContainer>
-  </section>
 
-  <!-- Image Modal -->
-  <Teleport to="body">
-    <div v-show="showModal" class="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <!-- Backdrop -->
-      <div ref="backdrop" class="absolute inset-0 bg-black/80 opacity-0" @click="closeModal"></div>
-      <!-- Modal content -->
-      <div ref="modalContent" class="relative z-10 max-w-4xl w-fit opacity-0 scale-95 mx-auto">
-        <button 
-          @click="closeModal" 
-          class="absolute -top-4 -right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg"
-        >
-          <span class="text-xl text-primary">&times;</span>
-        </button>
-        <img 
-          :src="getActiveImage()"
-          :alt="content.images[activeIndex]?.alt"
-          class="w-auto h-auto rounded-lg max-h-[75vh] object-contain"
-        />
+    <Teleport to="body">
+      <div v-show="showModal" class="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div ref="backdrop" class="absolute inset-0 bg-black/80 opacity-0" @click="closeModal"></div>
+        <div ref="modalContent" class="relative z-10 max-w-4xl w-fit opacity-0 scale-95 mx-auto">
+          <button 
+            @click="closeModal" 
+            class="absolute -top-4 -right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg"
+          >
+            <span class="text-xl text-primary">&times;</span>
+          </button>
+          <img 
+            :src="getActiveImage()"
+            :alt="content.images[activeIndex]?.alt"
+            class="w-auto h-auto rounded-lg max-h-[75vh] object-contain"
+          />
+        </div>
       </div>
-    </div>
-  </Teleport>
+    </Teleport>
+  </section>
 </template>
 
 <script setup>
@@ -200,7 +189,6 @@ const getActiveImage = () => {
   }
 }
 
-// Replace the existing onMounted with this:
 onMounted(() => {
   const handleEscape = (e) => {
     if (e.key === 'Escape' && showModal.value) {

@@ -4,32 +4,32 @@
     {
       "id": 1,
       "name": "Vince",
-      "imageUrl": "https://vhqpzjlhvsrsrdbxcpwn.supabase.co/storage/v1/object/public/images/partners/logo_vince.jpg"
+      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_vince.jpg"
     },
     {
       "id": 2,
       "name": "Gorgoroni", 
-      "imageUrl": "https://vhqpzjlhvsrsrdbxcpwn.supabase.co/storage/v1/object/public/images/partners/logo_gorgoroni.png"
+      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_gorgoroni.png"
     },
     {
       "id": 3,
       "name": "Federico Balestri",
-      "imageUrl": "https://vhqpzjlhvsrsrdbxcpwn.supabase.co/storage/v1/object/public/images/partners/logo_fede_balestri.png"
+      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_fede_balestri.png"
     },
     {
       "id": 4,
       "name": "Calortech",
-      "imageUrl": "https://vhqpzjlhvsrsrdbxcpwn.supabase.co/storage/v1/object/public/images/partners/logo_calortech.png"
+      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_calortech.png"
     },
     {
       "id": 5,
       "name": "OrangeBeach",
-      "imageUrl": "https://vhqpzjlhvsrsrdbxcpwn.supabase.co/storage/v1/object/public/images/partners/logo_orange_beach.png"
+      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_orange_beach.png"
     },
     {
       "id": 6,
       "name": "Pardi",
-      "imageUrl": "https://vhqpzjlhvsrsrdbxcpwn.supabase.co/storage/v1/object/public/images/partners/logo_pardi.png"
+      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_pardi.png"
     }
   ]
 }

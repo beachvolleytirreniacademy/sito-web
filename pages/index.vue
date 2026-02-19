@@ -108,6 +108,10 @@ useHead({
       name: 'google-site-verification', 
       content: '6zTFkBAsMiljLlF09GAWFllbk-9kbcbq5G3eTiest4Q' 
     },
+    { 
+      name: 'google-site-verification', 
+      content: 'CVR_Ig4RScE9mAVbn6OpzgQhbpOJUL8tKELmv5REYvo' 
+    },
     // Open Graph
     { property: 'og:title', content: 'Entra nel mondo Beach Volley Tirrenia Academy' },
     { property: 'og:description', content: 'Unisciti alla nostra community! Corsi, tornei e divertimento tutto l\'anno sul litorale pisano.' },

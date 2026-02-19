@@ -104,6 +104,9 @@ useHead({
     { 
       name: 'keywords', 
       content: 'Beach Volley Tirrenia, Corsi Beach Volley Pisa, Tornei Beach Volley Toscana, Scuola Beach Volley, BVTA' 
+    },{ 
+      name: 'google-site-verification', 
+      content: '6zTFkBAsMiljLlF09GAWFllbk-9kbcbq5G3eTiest4Q' 
     },
     // Open Graph
     { property: 'og:title', content: 'Entra nel mondo Beach Volley Tirrenia Academy' },

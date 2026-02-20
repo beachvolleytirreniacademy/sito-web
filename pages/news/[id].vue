@@ -127,6 +127,34 @@ const formatDate = (dateString) => {
 onMounted(() => {
   getArticle();
 });
+
+
+useHead({
+  // 1. TITOLO UNICO
+  title: 'News Beach Volley Tirrenia | News BVTA',
+  
+  meta: [
+    // 2. DESCRIZIONE UNICA
+    { 
+      name: 'description', 
+      content: 'Rimani aggiornato sulle novità della Beach Volley Tirrenia Academy.' 
+    },
+    
+    // Social (Open Graph) specifici per questa pagina
+    { property: 'og:title', content: 'Rimani aggiornato sulle novità della BVTA' },
+    { property: 'og:description', content: 'Scopri le ultime notizie!.' },
+    
+
+    //{ property: 'og:image', content: struttureImage },
+  ],
+  
+  // 3. LINK CANONICO (Fondamentale: cambia l'URL finale!)
+  link: [
+    { rel: 'canonical', href: 'https://www.beachvolleytirreniacademy.it/news' } ,
+    { rel: 'icon', type: 'image/png', href: '/favicon.png' } 
+  ]
+})
+
 </script>
 
 <style scoped>

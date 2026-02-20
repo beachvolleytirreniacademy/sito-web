@@ -120,7 +120,8 @@ useHead({
     { property: 'og:locale', content: 'it_IT' }
   ],
   link: [
-    { rel: 'canonical', href: 'https://www.beachvolleytirreniacademy.it/' } 
+    { rel: 'canonical', href: 'https://www.beachvolleytirreniacademy.it/' },
+    { rel: 'icon', type: 'image/png', href: '/favicon.png' }
   ]
 })
 </script>

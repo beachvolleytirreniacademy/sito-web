@@ -36,7 +36,8 @@ useHead({
   
   // 3. LINK CANONICO (Fondamentale: cambia l'URL finale!)
   link: [
-    { rel: 'canonical', href: 'https://www.beachvolleytirreniacademy.it/events' } 
+    { rel: 'canonical', href: 'https://www.beachvolleytirreniacademy.it/events' } ,
+    { rel: 'icon', type: 'image/png', href: '/favicon.png' } 
   ]
 })
 

@@ -241,4 +241,32 @@ const formatEventDates = (startStr, endStr) => {
 onMounted(() => {
   getEvent();
 });
+
+useHead({
+  // 1. TITOLO UNICO
+  title: 'Eventi Beach Volley Tirrenia Academy| Evento BVTA',
+  
+  meta: [
+    // 2. DESCRIZIONE UNICA
+    { 
+      name: 'description', 
+      content: 'Partecipa ai nostri eventi, tornei e non solo a Tirrenia (PI)!.' 
+    },
+    
+    // Social (Open Graph) specifici per questa pagina
+    { property: 'og:title', content: 'Partecipa ai nostri tornei di beach volley a Tirrenia' },
+    { property: 'og:description', content: 'Scopri i nostri eventi.' },
+    
+
+    //{ property: 'og:image', content: struttureImage },
+  ],
+  
+  // 3. LINK CANONICO (Fondamentale: cambia l'URL finale!)
+  link: [
+    { rel: 'canonical', href: 'https://www.beachvolleytirreniacademy.it/events' } ,
+    { rel: 'icon', type: 'image/png', href: '/favicon.png' } 
+  ]
+})
+
+
 </script>

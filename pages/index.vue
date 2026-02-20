@@ -95,11 +95,11 @@ onMounted(() => {
 
 // --- SEO (Metadati) ---
 useHead({
-  title: 'Beach Volley Tirrenia Academy | Corsi e Tornei a Pisa',
+  title: 'Beach Volley Tirrenia Academy | BVTA | Corsi e Tornei a Pisa',
   meta: [
     { 
       name: 'description', 
-      content: 'BVTA è la scuola di Beach Volley a Tirrenia e Pisa. Corsi per principianti e avanzati, tornei estivi e invernali, campi all\'aperto e indoor.' 
+      content: 'BVTA è una scuola di Beach Volley a Tirrenia e Pisa. Organizziamo tornei estivi e invernali.' 
     },
     { 
       name: 'keywords', 

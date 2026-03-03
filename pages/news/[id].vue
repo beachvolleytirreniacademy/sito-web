@@ -59,7 +59,7 @@
 
             <div 
               class="prose prose-lg max-w-none text-gray-600 leading-relaxed"
-              v-html="article.body || article.excerpt"
+              v-html="formatText(article.body || article.excerpt)"
             >
             </div>
             
@@ -154,6 +154,12 @@ useHead({
     { rel: 'icon', type: 'image/png', href: '/favicon.png' } 
   ]
 })
+
+const formatText = (text) => {
+  if (!text) return '';
+  // Sostituisce i ritorni a capo (\n) con il tag HTML <br>
+  return text.replace(/\n/g, '<br>');
+};
 
 </script>
 

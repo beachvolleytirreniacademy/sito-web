@@ -121,7 +121,7 @@ const animateCards = () => {
       ease: 'power2.out',
       scrollTrigger: { 
         trigger: cardsRef.value, 
-        start: 'top 90%', // Parte quasi subito appena entra nello schermo
+        start: 'top 0%', // Parte quasi subito appena entra nello schermo
         toggleActions: 'play none none reverse' 
       }
     })
@@ -129,19 +129,26 @@ const animateCards = () => {
 }
 
 onMounted(() => {
-  if (titleRef.value) {
-    gsap.from(titleRef.value, {
-      opacity: 0, 
-      y: 30, // Ridotto da 50 a 30
-      duration: 0.6, // Ridotto da 1 a 0.6
-      ease: 'power2.out',
-      scrollTrigger: { 
-        trigger: titleRef.value, 
-        start: 'top 90%', // Trigger anticipato per mobile
-        toggleActions: 'play none none reverse' 
-      }
-    })
-  }
+  // 1. Creiamo un'istanza di matchMedia di GSAP
+  let mm = gsap.matchMedia();
+
+  // 2. Definiamo che l'animazione avvenga SOLO per schermi >= 768px (Desktop/Tablet)
+  mm.add("(min-width: 768px)", () => {
+    if (titleRef.value) {
+      gsap.from(titleRef.value, {
+        opacity: 0, 
+        y: 30, 
+        duration: 0.6, 
+        ease: 'power2.out',
+        scrollTrigger: { 
+          trigger: titleRef.value, 
+          start: 'top 90%', 
+          toggleActions: 'play none none reverse' 
+        }
+      })
+    }
+  });
+
   getPastEvents()
 })
 </script>

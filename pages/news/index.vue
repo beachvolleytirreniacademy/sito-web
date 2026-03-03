@@ -7,27 +7,25 @@
           <h1 class="text-4xl font-bold text-primary mb-2">Tutte le News</h1>
           <p class="text-gray-600">Archivio completo degli aggiornamenti BVTA</p>
         </div>
-
-        <div class="space-y-8">
-          
-          <div v-if="loading" class="space-y-12">
-            <div 
-              v-for="n in itemsPerPage" 
-              :key="n" 
-              class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row h-auto md:h-48 animate-pulse"
-            >
-              <div class="w-full md:w-64 h-48 md:h-auto bg-gray-200 flex-shrink-0"></div>
-              <div class="p-6 flex flex-col justify-center flex-grow space-y-3">
-                <div class="h-4 bg-gray-200 rounded w-1/4"></div>
-                <div class="h-6 bg-gray-200 rounded w-3/4"></div>
-                <div class="h-4 bg-gray-200 rounded w-full"></div>
-                <div class="h-4 bg-gray-200 rounded w-1/2"></div>
-              </div>
+  
+        <div v-if="loading" class="flex flex-col gap-12">
+          <div 
+            v-for="n in itemsPerPage" 
+            :key="'skeleton-'+n" 
+            class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row h-auto md:h-48 animate-pulse"
+          >
+            <div class="w-full md:w-64 h-48 md:h-auto bg-gray-200 flex-shrink-0"></div>
+            <div class="p-6 flex flex-col justify-center flex-grow space-y-3">
+              <div class="h-4 bg-gray-200 rounded w-1/4"></div>
+              <div class="h-6 bg-gray-200 rounded w-3/4"></div>
+              <div class="h-4 bg-gray-200 rounded w-full"></div>
+              <div class="h-4 bg-gray-200 rounded w-1/2"></div>
             </div>
           </div>
+        </div>
 
+        <div v-else-if="news.length > 0" class="flex flex-col gap-8">
           <NuxtLink 
-            v-else
             v-for="article in news" 
             :key="article.id"
             :to="`/news/${article.id}`"
@@ -66,17 +64,15 @@
                   Leggi tutto <UIcon name="i-heroicons-arrow-right" class="w-4 h-4 ml-1"/>
                 </span>
               </div>
-              
             </div>
           </NuxtLink>
         </div>
 
-        <div v-if="!loading && news.length === 0" class="text-center py-20 text-gray-500">
+        <div v-else class="text-center py-20 text-gray-500">
           Nessuna notizia trovata.
         </div>
 
         <div v-if="totalPages > 1" class="mt-16 flex justify-center items-center gap-4">
-          
           <UButton 
             :disabled="currentPage === 1 || loading" 
             @click="changePage(currentPage - 1)"
@@ -102,7 +98,6 @@
           >
             Successiva
           </UButton>
-          
         </div>
 
       </UContainer>

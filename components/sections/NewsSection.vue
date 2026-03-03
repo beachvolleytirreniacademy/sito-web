@@ -68,7 +68,9 @@
       </div>
 
       <div class="mt-8 text-center md:hidden">
-        <UButton to="/news" variant="outline" block>Vedi tutte le news</UButton>
+        <UButton to="/news" variant="ghost" class="md:flex items-center text-primary" block>
+          Vedi tutte le news
+        </UButton>
       </div>
     </UContainer>
   </section>

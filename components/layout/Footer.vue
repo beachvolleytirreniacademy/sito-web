@@ -34,7 +34,7 @@
       <div class="flex flex-col items-center justify-center mb-8">
         <h2 class="text-2xl font-bold text-white mb-4">BVTA</h2>
         <div class="text-gray-400 text-sm">
-          © 2025 BVTA. Tutti i diritti riservati.
+          © 2026 BVTA. Tutti i diritti riservati.
         </div>
         <p 
             v-if="emailCopied" 

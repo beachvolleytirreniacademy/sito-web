@@ -1,5 +1,5 @@
 <template>
-  <section class="py-4">
+  <section class="py-4 bg-background-primary">
     <UContainer>
       <div class="grid gap-1 overflow-hidden">
         <div class="grid grid-cols-2 gap-1 lg:hidden">
@@ -86,10 +86,10 @@
       <div class="mt-0">
         <NuxtLink 
           to="https://linktr.ee/bvta?utm_source=linktree_profile_share&ltsid=16a184cf-0778-4eb2-aacc-5cfbb93008dd" 
-          class="block bg-white hover:bg-gray-100 transition-colors p-8 text-center"
+          class="block bg-background-primary hover:bg-background-primary-100 transition-colors p-8 text-center"
           target="_blank"
         >
-          <span class="block text-xl font-semibold text-gray-800 mb-2">
+          <span class="block text-xl font-semibold text-gray-100 mb-2">
             Vedi altro
           </span>
           <span class="text-primary hover:underline">

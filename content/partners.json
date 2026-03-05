@@ -3,43 +3,51 @@
   "partners": [
     {
       "id": 1,
-      "name": "Vince",
-      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_vince.jpg"
+      "name": "DPM Studio Commerciale",
+      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_vince.jpg",
+      "description": "Studio commerciale situato a San Giuliano Terme, esperti nel settore e affidabilità assoluta."
     },
     {
       "id": 2,
-      "name": "Gorgoroni", 
-      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_gorgoroni.png"
+      "name": "Pozzi Gorgoroni", 
+      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_gorgoroni.png",
+      "description": "Esperti nella realizzazione di pozzi artesiani, garantiscono soluzioni idriche all'avanguardia con la massima professionalità."
     },
     {
       "id": 3,
-      "name": "Federico Balestri",
-      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_fede_balestri.png"
+      "name": "Balestri vini e schiume",
+      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_fede_balestri.png",
+      "description": "Selezione esclusiva di birre e vini artigianali, ideali per brindare insieme dopo ogni match."
     },
     {
       "id": 4,
       "name": "Calortech",
-      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_calortech.png"
+      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_calortech.png",
+      "description": "Leader nei sistemi di climatizzazione e riscaldamento, garantiscono il comfort ideale in ogni stagione."
     },
     {
       "id": 5,
-      "name": "OrangeBeach",
-      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_orange_beach.png"
+      "name": "Orange Beach",
+      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_orange_beach.png",
+      "description": "Lo stabilimento di riferimento sul litorale: un connubio perfetto tra spiaggia attrezzata e oasi libera."
     },
     {
       "id": 6,
-      "name": "Pardi",
-      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_pardi.png"
+      "name": "Panificio Pardi",
+      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_pardi.png",
+      "description": "Il panificio di fiducia a Vecchiano: tradizione, genuinità e prodotti da forno sempre freschissimi."
     },
     {
       "id": 7,
       "name": "Sales",
-      "imageUrl": "/partners/sales.png"
+      "imageUrl": "/partners/sales.png",
+      "description": "Dal 1946 un'eccellenza nelle costruzioni edili, stradali e marittime: un pilastro solido per il territorio."
     },
     {
       "id": 8,
       "name": "Uva e Vino",
-      "imageUrl": "/partners/uvaevino.png"
+      "imageUrl": "/partners/uvaevino.png",
+      "description": "Rivenditore specializzato di vini pregiati e artigianali, la scelta perfetta per celebrare i nostri successi."
     }
   ]
 }

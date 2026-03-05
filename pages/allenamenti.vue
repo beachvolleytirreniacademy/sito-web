@@ -4,13 +4,9 @@
       <UContainer>
         
         <!-- HEADER CENTRALE (Stile Strutture) -->
-        <div class="text-center max-w-4xl mx-auto mb-16 md:mb-24">
-          <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6 animate-fade-in-up">
-            {{ pageTitle }}
-          </h1>
-          <p class="text-xl text-gray-600 leading-relaxed animate-fade-in-up delay-100">
-            {{ pageDescription }}
-          </p>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h1 class="text-4xl font-bold text-primary mb-4">{{ pageTitle }}</h1>
+          <p class="text-xl text-gray-500">{{ pageDescription }}</p>
         </div>
 
         <!-- SEZIONE INTRO + BVCA -->
@@ -80,7 +76,7 @@
         <!-- SEZIONE ALLENATORI -->
         <div class="mb-24">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Il Nostro Staff</h2>
+            <h2 class="text-3xl font-bold text-primary mb-4">Il Nostro Staff</h2>
             <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
             <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
               Passione e competenza al tuo servizio. I nostri allenatori ti seguiranno passo dopo passo.

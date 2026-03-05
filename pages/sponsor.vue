@@ -1,56 +1,110 @@
 <template>
   <Main>
-    <div class="pt-32 pb-16 min-h-screen bg-gray-50">
+    <div class="pt-32 pb-24 min-h-screen bg-gray-50">
       <UContainer>
-        <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-          
-          <div class="bg-primary p-12 text-center text-white relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent"></div>
-            <UIcon name="i-heroicons-hand-raised" class="w-16 h-16 mb-4 text-white/90 relative z-10" />
-            <h1 class="text-4xl font-bold mb-2 relative z-10">Unisciti a Noi</h1>
-            <p class="text-primary-100 text-lg relative z-10">Diventa partner ufficiale BVTA</p>
+        
+        <div class="mb-32">
+
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <h1 class="text-4xl font-bold text-primary mb-4">I Nostri Partner</h1>
+            <p class="text-xl text-gray-500">Le aziende e le realtà che credono nel nostro progetto e supportano la crescita del beach volley.</p>
           </div>
 
-          <div class="p-8 md:p-12 space-y-6">
-            <h2 class="text-2xl font-bold text-gray-800">Perché diventare sponsor?</h2>
-            <p class="text-gray-600 leading-relaxed">
-              La Beach Volley Tirrenia Academy non è solo sport, è una community. 
-              Sostenendoci, legherai il tuo brand a valori di salute, competizione e divertimento.
-            </p>
-
-            <ul class="grid md:grid-cols-2 gap-4 mt-6">
-              <li class="flex items-start text-gray-700 bg-gray-50 p-3 rounded-lg">
-                <UIcon name="i-heroicons-check-badge" class="text-primary mr-3 w-6 h-6 flex-shrink-0" />
-                <span class="text-sm">Logo su divise e striscioni campi</span>
-              </li>
-              <li class="flex items-start text-gray-700 bg-gray-50 p-3 rounded-lg">
-                <UIcon name="i-heroicons-globe-alt" class="text-primary mr-3 w-6 h-6 flex-shrink-0" />
-                <span class="text-sm">Visibilità Social & Web</span>
-              </li>
-              <li class="flex items-start text-gray-700 bg-gray-50 p-3 rounded-lg">
-                <UIcon name="i-heroicons-megaphone" class="text-primary mr-3 w-6 h-6 flex-shrink-0" />
-                <span class="text-sm">Menzioni durante i tornei</span>
-              </li>
-              <li class="flex items-start text-gray-700 bg-gray-50 p-3 rounded-lg">
-                <UIcon name="i-heroicons-gift" class="text-primary mr-3 w-6 h-6 flex-shrink-0" />
-                <span class="text-sm">Stand promozionali agli eventi</span>
-              </li>
-            </ul>
-
-            <div class="pt-8 mt-4 border-t border-gray-100 text-center">
-              <p class="text-gray-500 mb-6">Pronto a scendere in campo con noi?</p>
+          <div class="text-center mb-20">
+          </div>
+          
+          <div class="space-y-24 md:space-y-32">
+            <div 
+              v-for="(partner, index) in partnersList" 
+              :key="partner.id"
+              class="flex flex-col md:flex-row items-center gap-12 md:gap-20 group"
+              :class="{'md:flex-row-reverse': index % 2 !== 0}"
+            >
+              <div class="w-full md:w-5/12 flex justify-center items-center">
+                <img 
+                  :src="partner.imageUrl" 
+                  :alt="`Logo ${partner.name}`" 
+                  class="max-h-48 md:max-h-64 w-auto object-contain transition-all duration-500 ease-in-out transform group-hover:opacity-80 group-hover:scale-105"
+                />
+              </div>
               
-              <UButton 
-                @click="openModal"
-                size="xl"
-                block
-                color="primary"
-                variant="solid"
-                class="w-full bg-primary text-white hover:bg-primary-dark hover:text-white transition-colors duration-300 shadow-lg hover:shadow-primary/30"
-              >
-                <span class="mr-2">Parla con il Responsabile Sponsor</span>
-                <UIcon name="i-heroicons-chat-bubble-left-right" />
-              </UButton>
+              <div class="w-full md:w-7/12 text-center md:text-left space-y-6">
+                <h3 class="text-3xl font-bold text-gray-900">{{ partner.name }}</h3>
+                <div class="w-16 h-1 bg-primary mx-auto md:mx-0 rounded-full"></div>
+                <p class="text-gray-600 leading-relaxed text-lg md:text-xl font-light">
+                  {{ partner.description }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto relative mt-24">
+          <div class="absolute -inset-1 bg-gradient-to-r from-primary to-orange-400 rounded-3xl blur opacity-20"></div>
+          
+          <div class="relative bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100/50">
+            <div class="grid md:grid-cols-5 h-full">
+              
+              <div class="md:col-span-2 bg-primary p-10 flex flex-col justify-center text-white relative overflow-hidden">
+                <div class="absolute top-0 right-0 -mt-4 -mr-4 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                <div class="absolute bottom-0 left-0 -mb-4 -ml-4 w-32 h-32 bg-black/10 rounded-full blur-2xl"></div>
+                
+                <UIcon name="i-heroicons-hand-raised" class="w-16 h-16 mb-6 text-white/90 relative z-10" />
+                <h2 class="text-3xl font-bold mb-3 relative z-10 leading-tight">Unisciti alla<br>Nostra Squadra</h2>
+                <p class="text-primary-100 text-lg relative z-10 font-medium">Diventa partner ufficiale BVTA</p>
+              </div>
+
+              <div class="md:col-span-3 p-10 md:p-12 flex flex-col justify-between space-y-8 bg-white/50 backdrop-blur-sm">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-800 mb-4">Perché diventare sponsor?</h3>
+                  <p class="text-gray-600 leading-relaxed mb-8">
+                    La Beach Volley Tirrenia Academy non è solo sport, è una community. 
+                    Sostenendoci, legherai il tuo brand a valori di salute, competizione e divertimento.
+                  </p>
+
+                  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <li class="flex items-center text-gray-700">
+                      <div class="p-1.5 bg-primary/10 rounded-full mr-3 text-primary">
+                        <UIcon name="i-heroicons-check" class="w-4 h-4" />
+                      </div>
+                      <span class="text-sm font-medium">Logo su divise e campi</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                      <div class="p-1.5 bg-primary/10 rounded-full mr-3 text-primary">
+                        <UIcon name="i-heroicons-check" class="w-4 h-4" />
+                      </div>
+                      <span class="text-sm font-medium">Visibilità Social & Web</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                      <div class="p-1.5 bg-primary/10 rounded-full mr-3 text-primary">
+                        <UIcon name="i-heroicons-check" class="w-4 h-4" />
+                      </div>
+                      <span class="text-sm font-medium">Menzioni nei tornei</span>
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                      <div class="p-1.5 bg-primary/10 rounded-full mr-3 text-primary">
+                        <UIcon name="i-heroicons-check" class="w-4 h-4" />
+                      </div>
+                      <span class="text-sm font-medium">Stand promozionali</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="pt-8 border-t border-gray-100">
+                  <UButton 
+                    @click="openModal"
+                    size="xl"
+                    block
+                    color="primary"
+                    variant="solid"
+                    class="w-full bg-primary text-white hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-primary/40 hover:-translate-y-0.5 rounded-xl font-semibold text-lg"
+                  >
+                    <span class="mr-2">Parla con il Responsabile</span>
+                    <UIcon name="i-heroicons-chat-bubble-left-right" class="w-5 h-5" />
+                  </UButton>
+                </div>
+              </div>
+              
             </div>
           </div>
         </div>
@@ -140,53 +194,33 @@
 </template>
 
 <script setup>
-
-// In pages/strutture.vue
 import { useHead } from '#imports'
-// Magari qui importi una foto specifica dei campi
+import { ref } from 'vue'
+import Main from "@/components/layout/Main.vue";
 
-
-
+import partnersData from '@/content/partners.json' 
+const partnersList = ref(partnersData.partners)
 
 useHead({
-  // 1. TITOLO UNICO
   title: 'Sponsor Beach Volley Tirrenia Academy | Sponsor BVTA',
-  
   meta: [
-    // 2. DESCRIZIONE UNICA
-    { 
-      name: 'description', 
-      content: 'Diventa sponsor della Beach Volley Tirrenia Academy.' 
-    },
-    
-    // Social (Open Graph) specifici per questa pagina
-    { property: 'og:title', content: 'Diventa sposnor della  Beach Volley Tirrenia Academy' },
+    { name: 'description', content: 'Diventa sponsor della Beach Volley Tirrenia Academy.' },
+    { property: 'og:title', content: 'Diventa sponsor della Beach Volley Tirrenia Academy' },
     { property: 'og:description', content: 'Scopri le nostre offerte di collaborazione.' },
-    
-
-    //{ property: 'og:image', content: struttureImage },
   ],
-  
-  // 3. LINK CANONICO (Fondamentale: cambia l'URL finale!)
   link: [
     { rel: 'canonical', href: 'https://www.beachvolleytirreniacademy.it/sponsor' },
     { rel: 'icon', type: 'image/png', href: '/favicon.png' } 
   ]
 })
 
-
-
-
-import { ref } from 'vue'
-import Main from "@/components/layout/Main.vue";
-
 const isOpen = ref(false)
-const emailCopied = ref(false) // Stato per gestire l'animazione di copia
+const emailCopied = ref(false)
 
 const openModal = () => {
   isOpen.value = true
   document.body.style.overflow = 'hidden'
-  emailCopied.value = false // Reset stato
+  emailCopied.value = false
 }
 
 const closeModal = () => {
@@ -194,23 +228,15 @@ const closeModal = () => {
   document.body.style.overflow = ''
 }
 
-// Funzione "Copia negli appunti"
 const copyEmail = async () => {
   try {
-    // API moderna del browser per copiare
     await navigator.clipboard.writeText('beachvolleytirreniacademy@gmail.com');
-    
-    // Attiva l'animazione di successo
     emailCopied.value = true;
-    
-    // Dopo 3 secondi rimette lo stato normale
     setTimeout(() => {
       emailCopied.value = false;
     }, 3000);
-    
   } catch (err) {
     console.error('Impossibile copiare il testo: ', err);
-    // Fallback in caso di errore (es. browser vecchissimi), mostriamo un alert
     alert('Email: beachvolleytirreniacademy@gmail.com');
   }
 }

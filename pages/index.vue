@@ -10,6 +10,7 @@
         <PartnersSection id="partners" />
         <AboutSection id="about" />
         <StatsSection id="stats" />
+        <TrainingSection id="training" />
         <NewsSection v-if="hasNews" id="news" />
         <GallerySection id="gallery" />
         <ContactSection id="contact" />
@@ -27,6 +28,7 @@ import Main from "@/components/layout/Main.vue";
 import HeroSection from "@/components/sections/HeroSection.vue";
 import AboutSection from "@/components/sections/AboutSection.vue";
 import StatsSection from "@/components/sections/StatsSection.vue";
+import TrainingSection from "@/components/sections/TrainingSection.vue";
 import NewsSection from "@/components/sections/NewsSection.vue";
 import PartnersSection from "@/components/sections/PartnersSection.vue";
 import ContactSection from "@/components/sections/ContactSection.vue";

@@ -98,6 +98,7 @@ const menuItems = [
   { label: 'Eventi', path: '/events' },
   { label: 'News', path: '/news' },
   { label: 'Stagione Invernale', path: '/stagioneinvernale' },
+  { label: 'Corsi e Allenamenti', path: '/allenamenti' },
   { label: 'Strutture', path: '/strutture' },
   { label: 'Shop', path: '/shop' },
   { label: 'Contatti', path: '/#contact' }

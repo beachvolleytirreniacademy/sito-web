@@ -30,6 +30,16 @@
       "id": 6,
       "name": "Pardi",
       "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_pardi.png"
+    },
+    {
+      "id": 7,
+      "name": "Sales",
+      "imageUrl": "/partners/sales.png"
+    },
+    {
+      "id": 8,
+      "name": "Uva e Vino",
+      "imageUrl": "/partners/uvaevino.png"
     }
   ]
 }

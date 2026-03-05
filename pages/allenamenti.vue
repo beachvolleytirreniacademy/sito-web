@@ -238,14 +238,14 @@ const coaches = ref([
   {
     name: "Eugenio Amore",
     role: "Head Coach",
-    description: "Fondatore della BVCA, allenatore storico.",
+    description: "Fondatore della BVCA, allenatore storico e giocatore di beach volley con partecipazione alle olimpiadi di Atene 2004.",
     image: "https://placehold.co/400x500?text=Coach+Marco",
-    tags: ["Agonismo", "Tecnica"]
+    tags: ["Acta non Verba", "Tirare "]
   },
   {
-    name: "Giulia Bianchi",
-    role: "Istruttrice",
-    description: "Specializzata nei corsi base e intermedi, porta in campo energia e passione per far crescere i nuovi talenti.",
+    name: "Claudia Puccinelli",
+    role: "Coach",
+    description: "Specializzata nei corsi intermedi e avanzati, porta in campo energia e passione per far crescere i nuovi talenti. Claudia gioca nel campionato italiano di beach volley e ha raggiunto il quarto posto nazionale nell'edizione 2025",
     image: "https://placehold.co/400x500?text=Coach+Giulia",
     tags: ["Base", "Under 18"]
   },

@@ -14,14 +14,19 @@
           <!-- Immagine con Overlay BVCA -->
           <div class="relative order-2 md:order-1">
             <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-gray-200 group">
-              <img
-                src="https://placehold.co/600x700?text=Allenamenti+BVTA"
-                alt="Allenamenti Beach Volley"
+              <video
+                autoplay
+                loop
+                muted
+                playsinline
                 class="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105" 
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              >
+                <source src="/coach/videoallenamento.mp4" type="video/mp4" />
+                Il tuo browser non supporta il tag video.
+              </video>
+
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
               
-              <!-- Badge Partnership -->
               <div class="absolute bottom-6 left-6 right-6">
                 <div class="bg-primary/90 backdrop-blur-sm p-4 rounded-xl border border-white/20 shadow-lg">
                   <h3 class="text-white font-bold flex items-center gap-2">
@@ -34,9 +39,6 @@
                 </div>
               </div>
             </div>
-            <!-- Decorazione geometrica -->
-            <div class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-primary rounded-tl-3xl -z-10 opacity-60"></div>
-            <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-primary rounded-br-3xl -z-10 opacity-60"></div>
           </div>
 
           <!-- Testo Descrittivo -->
@@ -105,9 +107,6 @@
                 <p class="text-gray-600 text-sm leading-relaxed mb-4">
                   {{ coach.description }}
                 </p>
-                <div class="flex flex-wrap gap-2">
-                   <UBadge v-for="tag in coach.tags" :key="tag" color="gray" variant="solid" size="xs" class="bg-gray-100 text-gray-700 ring-1 ring-gray-200">{{ tag }}</UBadge>
-                </div>
               </div>
             </div>
           </div>
@@ -208,7 +207,7 @@ import Main from "@/components/layout/Main.vue"
 
 // SEO
 useHead({
-  title: 'Corsi Beach Volley Pisa e Tirrenia | BVTA',
+  title: 'Corsi e Allenamenti Beach Volley Pisa e Tirrenia | BVTA',
   meta: [
     { name: 'description', content: 'Unisciti ai nostri corsi di Beach Volley a Tirrenia e Pisa. Allenamenti per tutti i livelli in collaborazione con BVCA Viareggio.' },
     { property: 'og:title', content: 'Corsi Beach Volley BVTA' },
@@ -226,7 +225,7 @@ const pageDescription = "Sei in cerca di un gruppo con cui allenarti a beach vol
 // Stato Modale
 const showModal = ref(false)
 const emailCopied = ref(false)
-const whatsappNumber = "393403336499"
+const whatsappNumber = "393313494020"
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Ciao! Vorrei informazioni sui corsi di Beach Volley.")}`
 
 // Dati Allenatori
@@ -234,23 +233,20 @@ const coaches = ref([
   {
     name: "Eugenio Amore",
     role: "Head Coach",
-    description: "Fondatore della BVCA, allenatore storico e giocatore di beach volley con partecipazione alle olimpiadi di Atene 2004.",
-    image: "https://placehold.co/400x500?text=Coach+Marco",
-    tags: ["Acta non Verba", "Tirare "]
+    description: "Fondatore della BVCA, allenatore storico e grandissimo giocatore di beach volley. Eugenio ha rappresentato l'Italia alle olimpiadi di Pechino 2008 in coppia con Riccardo Lione.",
+    image: "/coach/eugenioamore.jpg"
   },
   {
     name: "Claudia Puccinelli",
     role: "Coach",
-    description: "Specializzata nei corsi intermedi e avanzati, porta in campo energia e passione per far crescere i nuovi talenti. Claudia gioca nel campionato italiano di beach volley e ha raggiunto il quarto posto nazionale nell'edizione 2025",
-    image: "https://placehold.co/400x500?text=Coach+Giulia",
-    tags: ["Base", "Under 18"]
+    description: "Specializzata nei corsi intermedi e avanzati, porta in campo energia e passione per far crescere i nuovi talenti. Claudia partecipa al campionato italiano ed è in top 30 nella classifica assoluta, dopo il raggiungimento del 13esimo posto nelle finali di Settembre 2025.",
+    image: "/coach/puccinelli.jpg"
   },
   {
-    name: "Luca Verdi",
-    role: "Preparatore",
-    description: "Si occupa della parte atletica e dei gruppi avanzati, focalizzandosi sulla strategia di gioco e la resistenza.",
-    image: "https://placehold.co/400x500?text=Coach+Luca",
-    tags: ["Avanzato", "Fisica"]
+    name: "Alessio Antonelli",
+    role: "Coach",
+    description: "Giocatore esperto cresciuto nella BVCA che compete nei tornei nazionali da piu di dieci anni. Si occupa di alcuni gruppi di livello base e avanzato.",
+    image: "/coach/aleanto.jpeg"
   }
 ])
 

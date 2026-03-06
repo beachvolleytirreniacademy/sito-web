@@ -7,11 +7,16 @@
         <div class="relative order-2 md:order-1 mt-8 md:mt-0">
           
           <div ref="imageWrapperRef" class="relative z-10 rounded-2xl overflow-hidden shadow-xl group">
-            <img
-              src="https://placehold.co/600x700?text=Allenamenti+BVTA"
-              alt="Allenamenti Beach Volley"
-              class="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105" 
-            />
+            <video
+                autoplay
+                loop
+                muted
+                playsinline
+                class="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105" 
+              >
+                <source src="/coach/videoallenamento.mp4" type="video/mp4" />
+                Il tuo browser non supporta il tag video.
+              </video>
             
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
             

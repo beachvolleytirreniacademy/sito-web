@@ -81,7 +81,7 @@
             <h2 class="text-3xl font-bold text-primary mb-4">Il Nostro Staff</h2>
             <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
             <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-              Passione e competenza al tuo servizio. I nostri allenatori ti seguiranno passo dopo passo.
+              Passione e competenza al tuo servizio. I nostri allenatori BVTA e BVCA ti seguiranno passo dopo passo.
             </p>
           </div>
 

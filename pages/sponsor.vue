@@ -13,7 +13,7 @@
           <div class="text-center mb-20">
           </div>
           
-          <div class="space-y-24 md:space-y-32">
+          <div class="flex flex-col gap-24 md:gap-32">
             <div 
               v-for="(partner, index) in partnersList" 
               :key="partner.id"

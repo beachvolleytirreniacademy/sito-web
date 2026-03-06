@@ -7,7 +7,7 @@
           <h2 class="text-4xl font-bold text-primary mb-4">
             Contattaci
           </h2>
-          <p class="text-xl text-gray-300">
+          <p class="text-xl text-gray-200">
             Siamo qui per aiutarti. Scegli il canale che preferisci.
           </p>
         </div>

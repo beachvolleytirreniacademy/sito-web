@@ -135,6 +135,21 @@
           </div>
 
           <div class="p-8 space-y-6">
+
+            <a 
+              :href= "whatsappLink" 
+              target="_blank"
+              class="flex items-center p-4 rounded-xl border-2 border-transparent bg-green-50 hover:border-green-200 hover:bg-green-100 transition-all group"
+            >
+              <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm text-green-600 mr-4 group-hover:scale-110 transition-transform">
+                <UIcon name="i-heroicons-chat-bubble-oval-left-ellipsis" class="w-6 h-6" />
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900">Scrivici su WhatsApp</h4>
+                <p class="text-sm text-gray-600">Risposta rapida per info veloci.</p>
+              </div>
+              <UIcon name="i-heroicons-arrow-up-right" class="w-5 h-5 text-gray-400 ml-auto group-hover:text-green-600 group-hover:translate-x-1 transition-all" />
+            </a>
             
             <div 
               @click="copyEmail"
@@ -163,21 +178,6 @@
               />
             </div>
 
-            <a 
-              href="https://wa.me/393403336499" 
-              target="_blank"
-              class="flex items-center p-4 rounded-xl border-2 border-transparent bg-green-50 hover:border-green-200 hover:bg-green-100 transition-all group"
-            >
-              <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm text-green-600 mr-4 group-hover:scale-110 transition-transform">
-                <UIcon name="i-heroicons-chat-bubble-oval-left-ellipsis" class="w-6 h-6" />
-              </div>
-              <div>
-                <h4 class="font-bold text-gray-900">Scrivici su WhatsApp</h4>
-                <p class="text-sm text-gray-600">Risposta rapida per info veloci.</p>
-              </div>
-              <UIcon name="i-heroicons-arrow-up-right" class="w-5 h-5 text-gray-400 ml-auto group-hover:text-green-600 group-hover:translate-x-1 transition-all" />
-            </a>
-
           </div>
 
           <div class="bg-gray-50 p-4 text-center border-t border-gray-100">
@@ -197,6 +197,9 @@
 import { useHead } from '#imports'
 import { ref } from 'vue'
 import Main from "@/components/layout/Main.vue";
+
+const whatsappNumber = "393313494020"
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Ciao! Vorrei informazioni sui corsi di Beach Volley.")}`
 
 import partnersData from '@/content/partners.json' 
 const partnersList = ref(partnersData.partners)

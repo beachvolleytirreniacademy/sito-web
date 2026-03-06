@@ -51,7 +51,7 @@
                 Alla <span class="text-primary font-bold">BVTA</span> crediamo che il beach volley sia per tutti. 
                 Insieme alla <span class="text-red-700 font-bold">BVCA</span> organizziamo gruppi di allenamento differenziati per livello sia d'Estate che d'Inverno.
               </p>
-              <ul class="space-y-4 mt-6">
+              <ul class="flex flex-col gap-6 mt-6">
                 <li class="flex items-start gap-3 text-gray-600">
                   <div class="p-1 bg-primary/20 rounded-full text-primary">
                     <UIcon name="i-heroicons-check" class="w-5 h-5" />

@@ -24,17 +24,7 @@
         </div>
       </div>
 
-      <div class="flex justify-center mt-8">
-        <UButton 
-          to="/sponsor"
-          size="xl"
-          color="primary"
-          variant="solid"
-          class="font-bold text-white bg-primary hover:bg-primary-dark hover:text-white px-8 animate-bounce-slow shadow-lg"
-        >
-          Diventa Sponsor
-        </UButton>
-      </div>
+      
     </UContainer>
 
     <div class="absolute bottom-0 left-0 right-0 w-full z-0 leading-none translate-y-[1px]">

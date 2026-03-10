@@ -247,6 +247,16 @@ const coaches = ref([
     role: "Coach",
     description: "Giocatore esperto cresciuto nella BVCA che compete nei tornei nazionali da piu di dieci anni. Si occupa di alcuni gruppi di livello base e avanzato.",
     image: "/coach/aleanto.jpeg"
+  },{
+    name: "Eleonora Gili",
+    role: "Coach",
+    description: "Giocatrice veterana del campionato italiano e non solo. Ha avuto grandi risultati negli anni passati rimanendo sempre nelle posizione piu alte della classifica assoluta.",
+    image: "/coach/gili.jpeg"
+  },{
+    name: "Matteo Marini",
+    role: "Coach",
+    description: "Talento pisano diviso tra beach volley e pallavolo indoor. Oggi compete nel campionato di Serie B di pallavolo e nel campionato italiano di beach volley.",
+    image: "/coach/marini.jpeg"
   }
 ])
 

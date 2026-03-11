@@ -243,16 +243,24 @@ const coaches = ref([
     image: "/coach/puccinelli.jpg"
   },
   {
-    name: "Alessio Antonelli",
-    role: "Coach",
-    description: "Giocatore esperto cresciuto nella BVCA che compete nei tornei nazionali da piu di dieci anni. Si occupa di alcuni gruppi di livello base e avanzato.",
-    image: "/coach/aleanto.jpeg"
-  },{
     name: "Eleonora Gili",
     role: "Coach",
     description: "Giocatrice veterana del campionato italiano e non solo. Ha avuto grandi risultati negli anni passati rimanendo sempre nelle posizione piu alte della classifica assoluta.",
     image: "/coach/gili.jpeg"
-  },{
+  },
+  {
+    name: "Davide Seminara",
+    role: "Coach e Presidente",
+    description: "Allenatore e presidente della BVTA. Ex calciatore di Serie C che da alcuni anni ha messo il beach volley al centro diventando un giocatore esperto con ottimi risultati nei circuiti AIBVC nazionali.",
+    image: "/coach/seminara.jpeg"
+  },
+  {
+    name: "Alessio Antonelli",
+    role: "Coach",
+    description: "Giocatore esperto cresciuto nella BVCA che compete nei tornei nazionali da piu di dieci anni. Si occupa di alcuni gruppi di livello base e avanzato.",
+    image: "/coach/aleanto.jpeg"
+  },
+  {
     name: "Matteo Marini",
     role: "Coach",
     description: "Talento pisano diviso tra beach volley e pallavolo indoor. Oggi compete nel campionato di Serie B di pallavolo e nel campionato italiano di beach volley.",

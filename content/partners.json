@@ -3,48 +3,54 @@
   "partners": [
     {
       "id": 1,
+      "name": "Okeo",
+      "imageUrl": "/partners/okeo.jpg",
+      "description": "E-commerce specializzato in abbigliamento e accessori per nuoto e beach volley. Sono il partner tecnico che realizza i nostri capi d'abbigliamento unici!"
+    },
+    {
+      "id": 2,
       "name": "DPM Studio Commerciale",
       "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_vince.jpg",
       "description": "Studio commerciale situato a San Giuliano Terme, esperti nel settore e affidabilità assoluta."
     },
     {
-      "id": 2,
+      "id": 3,
       "name": "Pozzi Gorgoroni", 
       "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_gorgoroni.png",
       "description": "Esperti nella realizzazione di pozzi artesiani, garantiscono soluzioni idriche all'avanguardia con la massima professionalità."
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Balestri vini e schiume",
       "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_fede_balestri.png",
       "description": "Selezione esclusiva di birre e vini artigianali, ideali per brindare insieme dopo ogni match."
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "Calortech",
       "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_calortech.png",
       "description": "Leader nei sistemi di climatizzazione e riscaldamento, garantiscono il comfort ideale in ogni stagione."
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Orange Beach",
       "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_orange_beach.png",
       "description": "Lo stabilimento di riferimento sul litorale: un connubio perfetto tra spiaggia attrezzata e oasi libera."
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "Panificio Pardi",
       "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_pardi.png",
       "description": "Il panificio di fiducia a Vecchiano: tradizione, genuinità e prodotti da forno sempre freschissimi."
     },
     {
-      "id": 7,
+      "id": 8,
       "name": "Sales",
       "imageUrl": "/partners/sales.png",
       "description": "Dal 1946 un'eccellenza nelle costruzioni edili, stradali e marittime: un pilastro solido per il territorio."
     },
     {
-      "id": 8,
+      "id": 9,
       "name": "Uva e Vino",
       "imageUrl": "/partners/uvaevino.png",
       "description": "Rivenditore specializzato di vini pregiati e artigianali, la scelta perfetta per celebrare i nostri successi."

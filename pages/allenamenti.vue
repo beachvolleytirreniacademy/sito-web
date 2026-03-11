@@ -252,7 +252,7 @@ const coaches = ref([
     name: "Davide Seminara",
     role: "Coach e Presidente",
     description: "Allenatore e presidente della BVTA. Ex calciatore di Serie C che da alcuni anni ha messo il beach volley al centro diventando un giocatore esperto con ottimi risultati nei circuiti AIBVC nazionali.",
-    image: "/coach/seminara.jpeg"
+    image: "/coach/seminara3.jpg"
   },
   {
     name: "Alessio Antonelli",

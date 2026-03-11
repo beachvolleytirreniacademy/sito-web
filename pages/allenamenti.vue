@@ -5,6 +5,22 @@
         
         <!-- HEADER CENTRALE (Stile Strutture) -->
         <div class="text-center max-w-3xl mx-auto mb-12">
+          
+          <div class="flex items-center justify-center gap-6 mb-8">
+            <img 
+              src="/logobvta.png" 
+              alt="Logo BVTA" 
+              class="h-26 md:h-20 w-auto object-contain drop-shadow-sm hover:scale-105 transition-transform duration-300"
+            />
+            
+            <span class="text-3xl md:text-3xl font-light text-primary">✕</span>
+            <img 
+              src="/logobvca.png" 
+              alt="Logo BVCA" 
+              class="h-26 md:h-20 w-auto object-contain drop-shadow-sm hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+
           <h1 class="text-4xl font-bold text-primary mb-4">{{ pageTitle }}</h1>
           <p class="text-xl text-gray-500">{{ pageDescription }}</p>
         </div>

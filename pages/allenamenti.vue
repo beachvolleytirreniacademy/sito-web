@@ -1,23 +1,24 @@
 <template>
   <Main>
-    <div class="pt-32 pb-20 min-h-screen bg-gray-50 overflow-hidden">
+    <div class="pt-6 pb-20 min-h-screen bg-gray-50 overflow-hidden">
       <UContainer>
         
         <!-- HEADER CENTRALE (Stile Strutture) -->
         <div class="text-center max-w-3xl mx-auto mb-12">
           
-          <div class="flex items-center justify-center gap-6 mb-8">
+          <<div class="flex items-center justify-center gap-4 md:gap-6 mb-8 px-6 md:px-0">
             <img 
               src="/logobvta.png" 
               alt="Logo BVTA" 
-              class="h-26 md:h-20 w-auto object-contain drop-shadow-sm hover:scale-105 transition-transform duration-300"
+              class="h-16 sm:h-20 md:h-24 w-auto object-contain drop-shadow-sm hover:scale-105 transition-transform duration-300"
             />
             
-            <span class="text-3xl md:text-3xl font-light text-primary">✕</span>
+            <span class="text-2xl md:text-3xl font-light text-primary">✕</span>
+            
             <img 
               src="/logobvca.png" 
               alt="Logo BVCA" 
-              class="h-26 md:h-20 w-auto object-contain drop-shadow-sm hover:scale-105 transition-transform duration-300"
+              class="h-16 sm:h-20 md:h-24 w-auto object-contain drop-shadow-sm hover:scale-105 transition-transform duration-300"
             />
           </div>
 

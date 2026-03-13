@@ -3,9 +3,9 @@
   "partners": [
     {
       "id": 1,
-      "name": "Okeo",
-      "imageUrl": "/partners/okeo.png",
-      "description": "E-commerce specializzato in abbigliamento e accessori per nuoto e beach volley. Sono il partner tecnico che realizza i nostri capi d'abbigliamento unici!"
+      "name": "Balestri vini e schiume",
+      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_fede_balestri.png",
+      "description": "Selezione esclusiva di birre e vini artigianali, ideali per brindare insieme dopo ogni match."
     },
     {
       "id": 2,
@@ -21,9 +21,9 @@
     },
     {
       "id": 4,
-      "name": "Balestri vini e schiume",
-      "imageUrl": "https://yndfgapowxknbtwyhfms.supabase.co/storage/v1/object/public/images/partners/logo_fede_balestri.png",
-      "description": "Selezione esclusiva di birre e vini artigianali, ideali per brindare insieme dopo ogni match."
+      "name": "Okeo",
+      "imageUrl": "/partners/okeo.png",
+      "description": "E-commerce specializzato in abbigliamento e accessori per nuoto e beach volley. Sono il partner tecnico che realizza i nostri capi d'abbigliamento unici!"
     },
     {
       "id": 5,

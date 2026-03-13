@@ -1,10 +1,10 @@
 <template>
-  <section id="news" class="py-20 bg-white">
+  <section id="news" class="py-20 bg-background-primary">
     <UContainer>
       <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
         <div class="max-w-2xl">
           <h2 class="text-3xl font-bold text-primary mb-4">Ultime Novità</h2>
-          <p class="text-gray-600">
+          <p class="text-gray-200">
             Rimani aggiornato su tornei, eventi e risultati della Beach Volley Tirrenia Academy.
           </p>
         </div>

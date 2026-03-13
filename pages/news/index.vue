@@ -1,4 +1,4 @@
-<template>
+<template >
   <Main>
     <div class="pt-32 pb-20 bg-gray-50 min-h-screen">
       <UContainer class="max-w-4xl mx-auto">

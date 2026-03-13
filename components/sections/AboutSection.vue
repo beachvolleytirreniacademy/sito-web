@@ -1,6 +1,9 @@
 <template>
-  <section ref="sectionRef" class="pt-24 pb-12 overflow-hidden bg-background-primary">
-    <UContainer>
+  <section ref="sectionRef" class="relative pt-24 pb-12 overflow-hidden bg-background-primary">
+    
+    
+
+    <UContainer class="relative z-10">
       <div class="grid md:grid-cols-2 gap-12 items-start px-4 md:px-0">
         
         <div class="relative order-2 md:order-1 mt-8 md:mt-0">
@@ -11,10 +14,6 @@
               class="rounded-lg shadow-xl w-full object-cover h-[600px]" 
             />
           </div>
-          <div
-            ref="shapeRef"
-            class="absolute -left-4 md:-left-8 -bottom-4 md:-bottom-8 w-full h-full border-8 border-primary rounded-lg -z-10"
-          ></div>
         </div>
 
         <div class="space-y-6 order-1 md:order-2 text-white">
@@ -35,7 +34,7 @@
                 La Beach Volley Tirrenia Academy (BVTA) nasce nel 2024, frutto dell'esperienza e della visione condivisa di un gruppo di amici uniti da una profonda passione per la sabbia. Quella che è iniziata come una piccola associazione sportiva si è evoluta rapidamente in un punto di riferimento per il beach volley sul litorale pisano, trasformando l'entusiasmo in una struttura organizzativa solida e professionale.
               </p>
             </div>
-            <div></div>
+            
             <div class="space-y-3">
               <h3 class="text-xl font-bold text-white border-l-4 border-primary pl-3">
                 La Nostra Missione
@@ -89,8 +88,7 @@ import aboutImage from '~/assets/images/about.jpg'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Riferimenti agli elementi DOM
-const sectionRef = ref(null) // NUOVO: Riferimento all'intera sezione
+const sectionRef = ref(null) 
 const imageWrapperRef = ref(null)
 const shapeRef = ref(null)
 const titleRef = ref(null)
@@ -104,39 +102,30 @@ const content = ref({
 onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: sectionRef.value, // MODIFICA FONDAMENTALE: Trigger sulla sezione intera, non sulla foto
-      start: 'top 75%',          // Parte quando la sezione entra bene nello schermo
-      toggleActions: 'play none none none' // MODIFICA: 'none' finale impedisce il reverse (non scompare scrollando su)
+      trigger: sectionRef.value, 
+      start: 'top 75%',          
+      toggleActions: 'play none none none' 
     }
   })
 
-  // Le animazioni partono tutte insieme ma con leggero ordine logico
-  
-  // 1. Immagine (Appare)
   tl.from(imageWrapperRef.value, {
     opacity: 0,
     x: -30,
     duration: 0.6,
     ease: 'power3.out'
   })
-  
-  // 2. Forma (Insieme alla foto)
   .from(shapeRef.value, {
     opacity: 0,
     x: -30,
     duration: 0.6,
     ease: 'power3.out'
   }, '<') 
-
-  // 3. Titolo (Insieme alla foto)
   .from(titleRef.value, {
     opacity: 0,
     y: 20,
     duration: 0.5,
     ease: 'power3.out'
   }, '<0.1')
-
-  // 4. Testi (Insieme alla foto, cascata veloce)
   .from(contentRef.value.children, {
     opacity: 0,
     y: 20,

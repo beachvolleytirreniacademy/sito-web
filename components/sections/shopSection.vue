@@ -3,8 +3,8 @@
     <UContainer>
       
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4 text-primary">BVTA Shop</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
+        <h1 class="text-4xl font-bold text-primary mb-4">BVTA Shop</h1>
+        <p class="text-xl text-gray-500">
           Il merchandising ufficiale Beach Volley Tirrenia Academy e le occasioni uniche dal nostro magazzino.
         </p>
       </div>

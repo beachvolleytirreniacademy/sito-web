@@ -14,7 +14,7 @@
                 playsinline
                 class="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105" 
               >
-                <source src="/coach/videoallenamento.mp4" type="video/mp4" />
+                <source src="/coach/videoallenamentopiccolo.mov" type="video/mp4" />
                 Il tuo browser non supporta il tag video.
               </video>
             

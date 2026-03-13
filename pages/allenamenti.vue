@@ -38,7 +38,7 @@
                 playsinline
                 class="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105" 
               >
-                <source src="/coach/videoallenamento.mp4" type="video/mp4" />
+                <source src="/coach/videoallenamento.mov" type="video/mp4" />
                 Il tuo browser non supporta il tag video.
               </video>
 
@@ -68,26 +68,20 @@
                 Alla <span class="text-primary font-bold">BVTA</span> crediamo che il beach volley sia per tutti. 
                 Insieme alla <span class="text-red-700 font-bold">BVCA</span> organizziamo gruppi di allenamento differenziati per livello sia d'Estate che d'Inverno.
               </p>
-              <ul class="flex flex-col gap-6 mt-6">
-                <li class="flex items-start gap-3 text-gray-600">
-                  <div class="p-1 bg-primary/20 rounded-full text-primary">
-                    <UIcon name="i-heroicons-check" class="w-5 h-5" />
-                  </div>
-                  <span>Gruppi invernali ed estivi attivi tutto l'anno.</span>
-                </li>
-                <li class="flex items-start gap-3 text-gray-600">
-                  <div class="p-1 bg-primary/20 rounded-full text-primary">
-                    <UIcon name="i-heroicons-check" class="w-5 h-5" />
-                  </div>
-                  <span>Programmi tecnici condivisi con gli allenatori e i giocatori BVCA.</span>
-                </li>
-                <li class="flex items-start gap-3 text-gray-600">
-                  <div class="p-1 bg-primary/20 rounded-full text-primary">
-                    <UIcon name="i-heroicons-check" class="w-5 h-5" />  
-                  </div>
-                  <span>Tornei interni e ritrovi sociali per divertirci insieme.</span>
-                </li>
-              </ul>
+                <ul class="flex flex-col gap-6">
+                  <li class="flex items-start gap-3">
+                    <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span class="text-gray-700">Gruppi invernali ed estivi attivi tutto l'anno.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span class="text-gray-700">Programmi tecnici condivisi con gli allenatori e i giocatori BVCA.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span class="text-gray-700">Tornei interni e ritrovi sociali per divertirci insieme.</span>
+                  </li>
+                </ul>
             </div>
           </div>
         </div>

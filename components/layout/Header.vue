@@ -101,7 +101,8 @@ const menuItems = [
   { label: 'Allenamenti', path: '/allenamenti' },
   { label: 'Sponsor', path: '/sponsor' },
   { label: 'Strutture', path: '/strutture' },
-  { label: 'Shop', path: '/shop' },
+  //{ label: 'Shop', path: '/shop' },
+  { label: 'Certificato Medico', path: '/certificati' },
   { label: 'Contatti', path: '/#contact' }
 ]
 

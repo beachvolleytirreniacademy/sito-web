@@ -9,7 +9,7 @@
             <p class="text-xl text-gray-500">Invia la tua documentazione medica in modo rapido e sicuro per partecipare alle attività della Beach Volley Tirrenia Academy.</p>
           </div>
 
-          <div class="max-w-4xl mx-auto relative mb-16">
+          <div class="max-w-4xl mx-auto relative mb-12">
             <div class="absolute -inset-1 bg-gradient-to-r from-primary to-orange-400 rounded-3xl blur opacity-20"></div>
             
             <div class="relative bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100/50 p-8 md:p-10">
@@ -42,25 +42,24 @@
             </div>
           </div>
           
-          <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100/50 relative">
-            <div v-if="isLoading" class="absolute inset-0 flex flex-col items-center justify-center bg-gray-50 z-0">
-              <UIcon name="i-heroicons-arrow-path" class="w-12 h-12 text-primary animate-spin mb-4" />
-              <p class="text-gray-500 font-medium animate-pulse">Caricamento modulo in corso...</p>
-            </div>
-
-            <iframe 
-              src="https://docs.google.com/forms/d/e/1FAIpQLSeKVVrVwKL2q4jxAr7024JX3U54hqCBtHEO0VAQFXU23--sbw/viewform?embedded=true" 
-              width="100%" 
-              height="800" 
-              frameborder="0" 
-              marginheight="0" 
-              marginwidth="0"
-              @load="isLoading = false"
-              class="relative z-10 bg-white"
-            ></iframe>
+          <div class="flex justify-center mb-16">
+            <UButton 
+                to="https://docs.google.com/forms/d/e/1FAIpQLSeKVVrVwKL2q4jxAr7024JX3U54hqCBtHEO0VAQFXU23--sbw/viewform" 
+                target="_blank"
+                size="xl"
+                color="primary"
+                variant="solid"
+                class="group relative flex items-center justify-center px-8 py-5 text-xl font-bold bg-primary text-white hover:bg-primary-dark rounded-2xl shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                >
+                <span class="relative z-10 flex items-center">
+                    Vai al Modulo di Caricamento
+                    <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-6 h-6 ml-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </span>
+                <div class="absolute inset-0 h-full w-full bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out z-0"></div>
+            </UButton>
           </div>
 
-          <div class="text-center mt-12">
+          <div class="text-center mt-8">
              <UButton 
               @click="openModal"
               variant="link"
@@ -154,9 +153,9 @@ import { ref } from 'vue';
 import { useHead } from '#imports';
 import Main from "@/components/layout/Main.vue";
 
-const isLoading = ref(true);
+// Rimossa la variabile isLoading perché non c'è più l'iframe
 
-const whatsappNumber = "393313494020";
+const whatsappNumber = "393454371360";
 const textMsg = "Ciao! Ho un problema con il caricamento del mio certificato medico sul sito.";
 const whatsappLink = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(textMsg);
 

@@ -33,9 +33,16 @@
 
       <div class="flex flex-col items-center justify-center mb-8">
         <h2 class="text-2xl font-bold text-white mb-4">BVTA</h2>
+        <NuxtLink 
+    to="/policy" 
+    class="text-gray-400 text-sm hover:text-white transition-colors cursor-pointer mb-2"
+  >
+    Privacy Policy
+  </NuxtLink>
         <div class="text-gray-400 text-sm">
           © 2026 BVTA. Tutti i diritti riservati.
         </div>
+        
         <p 
             v-if="emailCopied" 
             class="text-green-500 text-xs mt-2 animate-pulse"

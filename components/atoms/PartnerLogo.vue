@@ -4,6 +4,7 @@
     class="w-64 max-h-48 p-4 flex items-center justify-center opacity-0 shrink-0"
   >
     <img 
+      v-if="imageUrl"
       :src="imageUrl" 
       :alt="name"
       class="transition-all duration-300 w-auto h-auto max-w-full max-h-full object-contain"
@@ -12,7 +13,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue' // <-- AGGIUNTO ref QUI
 import gsap from 'gsap'
 
 const props = defineProps({
@@ -29,11 +30,13 @@ const props = defineProps({
 const logoRef = ref(null)
 
 onMounted(() => {
-  gsap.to(logoRef.value, {
-    opacity: 1,
-    y: 0,
-    duration: 0.6,
-    ease: 'power2.out'
-  })
+  if (logoRef.value) { // <-- Aggiunto controllo di sicurezza
+    gsap.to(logoRef.value, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power2.out'
+    })
+  }
 })
 </script>

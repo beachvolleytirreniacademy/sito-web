@@ -2,7 +2,7 @@
     <Main>
         <HeroSection id="hero" />
         
-        <UpcomingEventSection 
+        <EventsHomePageSection 
             v-if="hasUpcomingEvents" 
             id="events" 
         />
@@ -34,6 +34,7 @@ import PartnersSection from "@/components/sections/PartnersSection.vue";
 import ContactSection from "@/components/sections/ContactSection.vue";
 import UpcomingEventSection from "@/components/sections/UpcomingEventSection.vue";
 import GallerySection from "@/components/sections/GallerySection.vue";
+import EventsHomePageSection from "@/components/sections/EventsHomePageSection.vue";
 // import PastEventsSection from "@/components/sections/PastEventsSection.vue"; // Non usato nel template sopra
 
 // Import Client API

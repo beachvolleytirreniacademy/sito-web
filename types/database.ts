@@ -2,6 +2,7 @@ import type { EventsTable } from './entities/event'
 import type { NewsTable } from './entities/news'
 import type { LocationsTable } from './entities/locations'
 import type { ProductsTable } from './entities/products'
+import type { PartnersTable } from './entities/partners'
 import type { TeamsTable } from './entities/teams'
 import type { PlacementsTable } from './entities/placements'
 
@@ -14,6 +15,7 @@ export interface Database {
         products: ProductsTable
         teams: TeamsTable
         placements: PlacementsTable
+        partners: PartnersTable
     }
     Views: {
       [_ in never]: never
@@ -33,3 +35,4 @@ export type { LocationsTable } from './entities/locations'
 export type { ProductsTable } from './entities/products'
 export type { TeamsTable } from './entities/teams'
 export type { PlacementsTable } from './entities/placements'
+export type { PartnersTable } from './entities/partners'

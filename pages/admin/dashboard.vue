@@ -9,14 +9,15 @@ import adminEventManager from "@/components/sections/admin/adminEventManager.vue
 import adminTeamManager from "@/components/sections/admin/adminTeamManager.vue";
 import adminPlacementManager from "@/components/sections/admin/adminPlacementManager.vue";
 import adminProductManager from "@/components/sections/admin/adminProductManager.vue";
-
+import adminPartnerManager from "@/components/sections/admin/adminPartnerManager.vue";
 const items = [
   { label: 'News', slot: 'news' },
   { label: 'Eventi', slot: 'events' },
   { label: 'Squadre', slot: 'teams' },
   { label: 'Piazzamenti', slot: 'placements' },
   { label: 'Prodotti', slot: 'products' },
-  { label: 'Location', slot: 'locations' }
+  { label: 'Location', slot: 'locations' },
+  { label: 'Sponsor', slot: 'sponsors' }
 ]
 </script>
 
@@ -73,6 +74,10 @@ const items = [
 
         <template #locations>
            <adminLocationManager />
+        </template>
+
+        <template #sponsors>
+           <adminPartnerManager />
         </template>
 
       </UTabs>

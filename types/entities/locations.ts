@@ -1,4 +1,4 @@
-// ~/types/entities/locations.ts
+
 
 export interface Locations {
   id: number

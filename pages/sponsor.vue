@@ -13,7 +13,30 @@
           <div class="text-center mb-20">
           </div>
           
-          <div class="flex flex-col gap-24 md:gap-32">
+          <div v-if="loading" class="flex flex-col gap-24 md:gap-32">
+            <div 
+              v-for="n in 3" 
+              :key="'skeleton-'+n"
+              class="flex flex-col md:flex-row items-center gap-12 md:gap-20 animate-pulse"
+              :class="{'md:flex-row-reverse': n % 2 === 0}"
+            >
+              <div class="w-full md:w-5/12 flex justify-center items-center">
+                <div class="w-64 h-48 md:h-64 bg-gray-200 rounded-2xl"></div>
+              </div>
+              
+              <div class="w-full md:w-7/12 text-center md:text-left space-y-6">
+                <div class="h-10 bg-gray-200 rounded w-3/4 mx-auto md:mx-0"></div>
+                <div class="w-16 h-1 bg-gray-300 mx-auto md:mx-0 rounded-full"></div>
+                <div class="space-y-3">
+                  <div class="h-4 bg-gray-200 rounded w-full"></div>
+                  <div class="h-4 bg-gray-200 rounded w-full"></div>
+                  <div class="h-4 bg-gray-200 rounded w-5/6 mx-auto md:mx-0"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div v-else-if="partnersList.length > 0" class="flex flex-col gap-24 md:gap-32">
             <div 
               v-for="(partner, index) in partnersList" 
               :key="partner.id"
@@ -22,7 +45,7 @@
             >
               <div class="w-full md:w-5/12 flex justify-center items-center">
                 <img 
-                  :src="partner.imageUrl" 
+                  :src="partner.image_url || partner.imageUrl || 'https://placehold.co/400x300?text=Logo'" 
                   :alt="`Logo ${partner.name}`" 
                   class="max-h-48 md:max-h-64 w-auto object-contain transition-all duration-500 ease-in-out transform group-hover:opacity-80 group-hover:scale-105"
                 />
@@ -37,6 +60,11 @@
               </div>
             </div>
           </div>
+
+          <div v-else class="text-center py-16">
+            <p class="text-xl text-gray-500">Al momento non ci sono partner da mostrare.</p>
+          </div>
+
         </div>
 
         <div class="max-w-4xl mx-auto relative mt-24">
@@ -195,14 +223,17 @@
 
 <script setup>
 import { useHead } from '#imports'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import Main from "@/components/layout/Main.vue";
+
+import { PartnersClient } from '~/api/partners_client';
 
 const whatsappNumber = "393313494020"
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Ciao! Vorrei informazioni sui corsi di Beach Volley.")}`
 
-import partnersData from '@/content/partners.json' 
-const partnersList = ref(partnersData.partners)
+// 2. Stati reattivi per i dati dal DB
+const partnersList = ref([])
+const loading = ref(true)
 
 useHead({
   title: 'Sponsor Beach Volley Tirrenia Academy | Sponsor BVTA',
@@ -243,6 +274,28 @@ const copyEmail = async () => {
     alert('Email: beachvolleytirreniacademy@gmail.com');
   }
 }
+
+// 3. Funzione per scaricare i dati dal Database
+const getPartners = async () => {
+  try {
+    loading.value = true;
+    
+    
+    const data = await PartnersClient.getAll();  
+    if (data) {
+      partnersList.value = data;
+    }
+  } catch (error) {
+    console.error("Errore recupero partners:", error.message);
+  } finally {
+    loading.value = false;
+  }
+};
+
+// 4. Lancia il fetch al mount del componente
+onMounted(() => {
+  getPartners();
+});
 </script>
 
 <style scoped>
